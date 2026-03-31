@@ -1,0 +1,12 @@
+firebaseConfig/
+node_modules/
+.env
+*.log
+.DS_Store
+.gemini/
+brain/
+artifacts/
+*.png
+*.jpg
+*.jpeg
+*.gif
