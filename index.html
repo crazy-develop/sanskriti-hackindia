@@ -324,282 +324,493 @@
       opacity: 0.9;
     }
 
-    /* ===== College Comparison ===== */
-    .comparison-heading {
+    /* ===== Professional Institutions Sections ===== */
+    /* Institution Explorer Styling */
+    .explorer-header {
       text-align: center;
-      padding: 50px 20px 20px;
+      margin-bottom: 50px;
     }
 
-    .comparison-heading h2 {
-      font-size: 2rem;
-      color: #1e293b;
-      margin-bottom: 10px;
+    .explorer-tabs {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 50px;
+      margin-bottom: 30px;
+      border: 1px solid #e2e8f0;
     }
 
-    .comparison-heading .highlight {
-      color: #00bfa6;
+    .tab-btn {
+      padding: 12px 35px;
+      border: none;
+      background: none;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      border-radius: 40px;
+      transition: all 0.3s;
+      font-size: 1rem;
     }
 
-    /* ===== College Cards Grid ===== */
-    #college-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 35px;
-      padding: 40px 20px;
-      max-width: 1250px;
-      margin: auto;
+    .tab-btn.active {
+      background: white;
+      color: var(--primary-color);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    .college-card {
-      background: #fff;
-      border-radius: 24px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .filter-chips {
       display: flex;
-      flex-direction: column;
-      border: 1px solid #f0f4f8;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
     }
 
-    .college-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      border-color: #00bfa6;
+    .filter-chip {
+      padding: 8px 20px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
     }
 
-    .college-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s;
+    .filter-chip:hover, .filter-chip.active {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: #f0fdfa;
     }
 
-    .college-card:hover .college-img {
-      transform: scale(1.05);
+    .institutions-container {
+      display: none; /* Controlled by JS */
     }
 
-    .college-body {
-      padding: 25px;
-      text-align: left;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
+    .institutions-container.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
     }
 
-    .college-body h3 {
-      font-size: 1.4rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
       color: #1e293b;
       margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: #00bfa6;
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: #64748b;
+    }
+
+    .institutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .district-heading {
+      grid-column: 1 / -1;
+      text-align: left;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .district-heading h3 {
+      font-size: 1.75rem;
+      color: #334155;
       font-weight: 700;
     }
 
-    .data-grid {
+    .inst-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #f1f5f9;
+      position: relative;
+    }
+
+    .inst-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: #00bfa6;
+    }
+
+    .inst-img-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .inst-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .inst-card:hover .inst-img {
+      transform: scale(1.1);
+    }
+
+    .inst-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #00bfa6;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    .inst-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .inst-body h4 {
+      font-size: 1.25rem;
+      color: #1e293b;
+      margin-bottom: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 20px;
     }
 
-    .data-item {
+    .info-box {
       background: #f8fafc;
-      padding: 10px;
+      padding: 10px 12px;
       border-radius: 12px;
-      border-left: 3px solid #00bfa6;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
     }
 
-    .data-label {
-      font-size: 0.7rem;
+    .inst-card:hover .info-box {
+      background: #f1f5f9;
+      border-bottom-color: #00bfa6;
+    }
+
+    .info-label {
+      font-size: 0.65rem;
       text-transform: uppercase;
-      color: #64748b;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
+      color: #94a3b8;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
 
-    .data-value {
+    .info-value {
       font-size: 0.85rem;
       color: #334155;
       font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .tag-popular {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: linear-gradient(135deg, #00bfa6, #009e8c);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 50px;
-      z-index: 10;
-      box-shadow: 0 4px 10px rgba(0, 191, 166, 0.3);
+    .inst-desc {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2; /* Added for standard compatibility */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .btn-details {
+    .btn-view {
       display: block;
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       background: #f1f5f9;
-      color: #1e293b;
+      color: #475569;
       text-align: center;
       text-decoration: none;
-      border-radius: 12px;
+      border-radius: 10px;
       font-weight: 700;
-      transition: all 0.3s;
+      font-size: 0.9rem;
+      transition: all 0.2s;
       margin-top: auto;
     }
 
-    .btn-details:hover {
-      background: #00bfa6;
-      color: white;
+    .btn-view:hover {
+      background: #1e293b;
+      color: #fff;
     }
 
-    .btn-container { text-align: center; padding: 40px; }
-    .compare-btn {
-      padding: 15px 35px;
+    .section-footer {
+      margin-top: 50px;
+    }
+
+    .btn-main {
+      padding: 16px 40px;
       background: #1e293b;
       color: #fff;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 700;
       transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .compare-btn:hover { background: #000; transform: scale(1.05); }
 
-    /* ===== Mentor Section ===== */
+    .btn-main:hover {
+      background: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Modern Mentor Showcase */
     .mentor-section {
-      text-align: center;
-      padding: 60px 20px 20px;
+      padding: 100px 20px;
+      background: #ffffff;
     }
 
-    .mentor-section h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #1e293b;
-    }
-
-    .mentor-section span {
-      color: #00bfa6;
-    }
-
-    .mentor-section p {
-      color: #666;
-      font-size: 1rem;
-    }
-
-    /* ===== Mentor Cards Grid ===== */
-    .mentor-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .mentor-scroll-container {
+      display: flex;
       gap: 25px;
-      padding: 30px 20px;
+      overflow-x: auto;
+      padding: 20px 10px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Hide scrollbar Firefox */
     }
+
+    .mentor-scroll-container::-webkit-scrollbar { display: none; }
 
     .mentor-card {
-      background: #fff;
-      border-radius: 15px;
-      width: 100%;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
+      flex: 0 0 320px;
+      scroll-snap-align: center;
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
-      transition: 0.3s ease;
-      display: flex;
-      flex-direction: column;
     }
 
     .mentor-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      background: white;
+      border-color: #00bfa6;
     }
 
-    .mentor-header {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 15px;
-      font-size: 0.9rem;
-      font-weight: 600;
+    .mentor-avatar-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
     }
 
-    .rating {
-      color: #f39c12;
-    }
-
-    .status {
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-    }
-
-    .available {
-      background: #d1fae5;
-      color: #065f46;
-    }
-
-    .mentor-card img {
+    .mentor-avatar {
       width: 100%;
-      height: 160px;
+      height: 100%;
+      border-radius: 50%;
       object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    .mentor-info {
-      padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    .status-ring {
+      position: absolute;
+      bottom: -2px;
+      right: 5px;
+      width: 18px;
+      height: 18px;
+      background: #10b981;
+      border: 3px solid white;
+      border-radius: 50%;
     }
 
-    .mentor-info p {
+    .mentor-card h4 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .mentor-desc {
       font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 10px;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .mentor-meta {
+    .mentor-stats {
       display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-bottom: 10px;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 15px;
     }
 
-    .tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
+    .stat-item {
+      text-align: center;
     }
 
-    .tags span {
-      background: #f1f5f9;
-      padding: 4px 8px;
+    .stat-value {
+      display: block;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1rem;
+    }
+
+    .stat-label {
       font-size: 0.75rem;
-      border-radius: 6px;
-    }
-
-    .availability {
-      font-size: 0.85rem;
-      color: #333;
-      margin-bottom: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
     }
 
     .btn-session {
-      margin-top: auto;
       display: block;
       text-align: center;
-      padding: 10px;
-      background: #0047ab;
+      padding: 12px;
+      background: #00bfa6;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 700;
       transition: 0.3s ease;
     }
 
     .btn-session:hover {
-      background: #003080;
+      background: #009e8c;
     }
+
+    /* Comparison Selection Mode Styles */
+    .inst-card .compare-overlay {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 20;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .inst-card.selection-mode .compare-overlay {
+      opacity: 1;
+    }
+
+    .compare-checkbox {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border: 2px solid #00bfa6;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 1.2rem;
+      color: transparent;
+    }
+
+    .compare-checkbox.selected {
+      background: #00bfa6;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .inst-card.selected {
+      border: 3px solid #00bfa6;
+    }
+
+    #compare-floating-bar {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 2000;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #compare-floating-bar.active {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .btn-go-compare {
+      background: #00bfa6;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-go-compare:hover {
+      background: #009e8c;
+    }
+
+    .btn-cancel-compare {
+      background: transparent;
+      color: #94a3b8;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+
 
     .browse-container {
       text-align: center;
@@ -992,300 +1203,236 @@
     <a href="game.html" class="btn btn-primary" style="background: white; color: #047857; padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Play Career Puzzle Now →</a>
   </section>
 
-  <!-- College Section -->
-  <section class="comparison-heading">
-    <section class="college-section">
-      <h2 id="colleges">Top Colleges</h2>
-      <p>Explore and compare the best institutions for your future.</p>
-      ...
-    </section>
+  <!-- Explore Hub Section -->
+  <section class="institutions-section" id="explore-hub" style="padding: 100px 20px;">
+    <div class="explorer-header">
+      <h2 style="font-size: 3rem; margin-bottom: 10px; color: #0f172a;">Discover Your Future</h2>
+      <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 40px;">Professional insights into the best educational paths for your career.</p>
 
-    <div id="college-wrapper">
-      <!-- JAMMU DISTRICT -->
-      <div style="grid-column: 1 / -1; margin-top: 40px; margin-bottom: 20px;">
-        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Jammu District Top Institutions 🏔️</h3>
-      </div>
-      
-      <!-- IIT Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">Premier Institute</span>
-        <img src="https://share.google/images/JDmCy7MCwh4K3zaxU" class="college-img" alt="IIT Jammu" />
-        <div class="college-body">
-          <h3>IIT Jammu</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">2016</div></div>
-            <div class="data-item"><div class="data-label">NIRF RANK</div><div class="data-value">62nd (Eng)</div></div>
-            <div class="data-item"><div class="data-label">CAMPUS</div><div class="data-value">400 Acres</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">JEE Advanced</div></div>
-          </div>
-          <a href="college/iitjammu.html" class="btn-details">View Details</a>
-        </div>
+      <div class="explorer-tabs">
+        <button class="tab-btn active" onclick="switchMainTab('colleges')">Top Colleges</button>
+        <button class="tab-btn" onclick="switchMainTab('schools')">Top Schools</button>
       </div>
 
-      <!-- SMVDU Katra -->
-      <div class="college-card">
-        <span class="tag-popular">Residential Technical</span>
-        <img src="https://share.google/images/mhQ2NRTpDTnZKv2Xc" class="college-img" alt="SMVDU Katra" />
-        <div class="college-body">
-          <h3>Shri Mata Vaishno Devi Univ.</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1999</div></div>
-            <div class="data-item"><div class="data-label">FEES (B.TECH)</div><div class="data-value">₹2.29L approx.</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">JEE Main, CUET</div></div>
-            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Katra (Reasi)</div></div>
-          </div>
-          <a href="college/smvdukatra.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- University of Jammu -->
-      <div class="college-card">
-        <img src="univ_jammu_building_1774956817912.png" class="college-img" alt="University of Jammu" />
-        <div class="college-body">
-          <h3>University of Jammu</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.8</div>
-            <div class="college-stat">Type: Public University</div>
-          </div>
-          <p class="college-meta">City: Jammu</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- The Business School, University of Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">Award Winning</span>
-        <img src="https://share.google/images/PtQRXcWyc5kHrTYO3" class="college-img" alt="TBS Jammu" />
-        <div class="college-body">
-          <h3>The Business School (TBS)</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1987</div></div>
-            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹78,000</div></div>
-            <div class="data-item"><div class="data-label">ACCREDITATION</div><div class="data-value">AICTE, UGC</div></div>
-            <div class="data-item"><div class="data-label">CONTACT</div><div class="data-value">0191-2430023</div></div>
-          </div>
-          <a href="college/tbsjammu.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- GMC Jammu -->
-      <div class="college-card">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" class="college-img" alt="GMC Jammu" />
-        <div class="college-body">
-          <h3>Government Medical College (GMC)</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.7</div>
-            <div class="college-stat">Type: Medical</div>
-          </div>
-          <p class="college-meta">City: Jammu</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- MIET Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">NAAC 'A' Grade</span>
-        <img src="https://share.google/images/eyUAJtjEd6Z9GoSwo" class="college-img" alt="MIET Jammu" />
-        <div class="college-body">
-          <h3>MIET Jammu</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1996</div></div>
-            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹1.1L - 2.3L</div></div>
-            <div class="data-item"><div class="data-label">RATING</div><div class="data-value">⭐ 4.6</div></div>
-            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Kot Bhalwal</div></div>
-          </div>
-          <a href="college/mietjammu.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- CUJ Samba -->
-      <div class="college-card">
-        <span class="tag-popular">Central Govt.</span>
-        <img src="https://share.google/images/HYUsMyZao9HZyHcBZ" class="college-img" alt="CUJ Samba" />
-        <div class="college-body">
-          <h3>Central University of Jammu</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">2011</div></div>
-            <div class="data-item"><div class="data-label">FEES (UG)</div><div class="data-value">₹19k - 20k+</div></div>
-            <div class="data-item"><div class="data-label">CAMPUS</div><div class="data-value">610 Acres</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">CUET</div></div>
-          </div>
-          <a href="college/cujammu.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- BEE ENN Nursing Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">Nursing Excellence</span>
-        <img src="https://share.google/images/9MuqhVlwMIbF5OWKp" class="college-img" alt="BEE ENN Nursing" />
-        <div class="college-body">
-          <h3>BEE ENN College of Nursing</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1998</div></div>
-            <div class="data-item"><div class="data-label">FEES (B.SC)</div><div class="data-value">₹3,00,000</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">10+2 PCB (45%)</div></div>
-            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Chak Bhalwal</div></div>
-          </div>
-          <a href="college/beennnursing.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- GCW Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">Women's Education</span>
-        <img src="https://share.google/images/RwSe1umvuouCwjQcQ" class="college-img" alt="GCW Jammu" />
-        <div class="college-body">
-          <h3>Govt. College for Women, Jammu</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Gandhinagar, Jammu</div></div>
-            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹28k - ₹32k</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">Merit-based (10+2)</div></div>
-            <div class="data-item"><div class="data-label">CONTACT</div><div class="data-value">0191-2435158</div></div>
-          </div>
-          <a href="college/gcwjammu.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- Life Sciences Jammu -->
-      <div class="college-card">
-        <span class="tag-popular">Scientific Research</span>
-        <img src="https://images.unsplash.com/photo-1540910419892-da68999a4550" class="college-img" alt="Life Sciences Jammu" />
-        <div class="college-body">
-          <h3>Faculty of Life Sciences, Jammu Univ</h3>
-          <div class="data-grid">
-            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1971</div></div>
-            <div class="data-item"><div class="data-label">FEES (M.SC)</div><div class="data-value">₹3.6L - ₹4.8L</div></div>
-            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">CUET-PG</div></div>
-            <div class="data-item"><div class="data-label">GRADE</div><div class="data-value">NAAC 'A+'</div></div>
-          </div>
-          <a href="college/lifesciencesjammu.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- Jodhamal Public School -->
-      <div class="college-card">
-        <span class="tag-popular">Top Rated</span>
-        <img src="modern_school_jammu_building_1774956861450.png" class="college-img" alt="Jodhamal Public School" />
-        <div class="college-body">
-          <h3>Jodhamal Public School</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.8</div>
-            <div class="college-stat">Type: School</div>
-          </div>
-          <p class="college-meta">City: Jammu</p>
-          <a href="college/collegekr.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- RAJOURI & POONCH DISTRICTS -->
-      <div style="grid-column: 1 / -1; margin-top: 60px; margin-bottom: 20px;">
-        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Rajouri & Poonch Institutions 🛣️</h3>
-      </div>
-
-      <!-- BGSBU Rajouri -->
-      <div class="college-card">
-        <img src="bgsbu_rajouri_campus_1774956839858.png" class="college-img" alt="BGSBU Rajouri" />
-        <div class="college-body">
-          <h3>Baba Ghulam Shah Badshah University</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.6</div>
-            <div class="college-stat">Type: University</div>
-          </div>
-          <p class="college-meta">City: Rajouri</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- GPG College Rajouri -->
-      <div class="college-card">
-        <img src="https://images.unsplash.com/photo-1541339907198-e08756edd811" class="college-img" alt="GPG College Rajouri" />
-        <div class="college-body">
-          <h3>Government Post Graduate College</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.5</div>
-            <div class="college-stat">Type: Degree College</div>
-          </div>
-          <p class="college-meta">City: Rajouri</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- GMC Rajouri -->
-      <div class="college-card">
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2" class="college-img" alt="GMC Rajouri" />
-        <div class="college-body">
-          <h3>Government Medical College</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.6</div>
-            <div class="college-stat">Type: Medical</div>
-          </div>
-          <p class="college-meta">City: Rajouri</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- GDC Poonch -->
-      <div class="college-card">
-        <img src="https://images.unsplash.com/photo-1523050335456-adabbf7ceb97" class="college-img" alt="GDC Poonch" />
-        <div class="college-body">
-          <h3>Government Degree College</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.4</div>
-            <div class="college-stat">Type: Degree College</div>
-          </div>
-          <p class="college-meta">City: Poonch</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <!-- EXISTING POPULAR COLLEGES -->
-      <div style="grid-column: 1 / -1; margin-top: 60px; margin-bottom: 20px;">
-        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Global Top Institutions 🌎</h3>
-      </div>
-
-      <div class="college-card">
-        <span class="tag-popular">Popular</span>
-        <img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg" class="college-img" alt="Sanskriti University" />
-        <div class="college-body">
-          <h3>Sanskriti University</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.5</div>
-            <div class="college-stat">Type : University</div>
-          </div>
-          <p class="college-meta">City: Mathura</p>
-          <a href="college/collegedata.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <div class="college-card">
-        <img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="college-img" alt="K.R girls inter College" />
-        <div class="college-body">
-          <h3>K.R girls inter College</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.2</div>
-            <div class="college-stat">Type: school/college</div>
-          </div>
-          <p class="college-meta">City:Mathura</p>
-          <a href="college/collegekr.html" class="btn-details">View Details</a>
-        </div>
-      </div>
-
-      <div class="college-card">
-        <img src="https://content.jdmagicbox.com/v2/comp/chitradurga/y1/9999p8194.8194.220612230402.h4y1/catalogue/jawahar-navodaya-vidyalaya-uduvally-chitradurga-boarding-schools-elyjpfvk3x.jpg" class="college-img" alt="JNV" />
-        <div class="college-body">
-          <h3>Jawahar Navodaya Vidyalaya</h3>
-          <div class="college-stats">
-            <div class="college-stat">Rating: 4.5</div>
-            <div class="college-stat">Type:school</div>
-          </div>
-          <p class="college-meta">City: Uduvally</p>
-          <a href="college/collegejavahar.html" class="btn-details">View Details</a>
-        </div>
+      <div class="filter-chips">
+        <button class="filter-chip active" onclick="filterByDistrict('all')">All Regions</button>
+        <button class="filter-chip" onclick="filterByDistrict('jammu')">Jammu</button>
+        <button class="filter-chip" onclick="filterByDistrict('rajouri')">Rajouri & Poonch</button>
+        <button class="filter-chip" onclick="filterByDistrict('global')">Global Top</button>
       </div>
     </div>
 
-    <div class="btn-container">
-      <a href="#" class="compare-btn">Compare Colleges</a>
+    <!-- COLLEGES HUB -->
+    <div id="colleges-hub" class="institutions-container active">
+      <div class="institutions-grid">
+        <!-- IIT Jammu -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Premier Institute</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/JDmCy7MCwh4K3zaxU" class="inst-img" alt="IIT Jammu" /></div>
+          <div class="inst-body">
+            <h4>IIT Jammu</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">ESTABLISHED</div><div class="info-value">2016</div></div>
+              <div class="info-box"><div class="info-label">NIRF RANK</div><div class="info-value">62nd</div></div>
+              <div class="info-box"><div class="info-label">ADMISSION</div><div class="info-value">JEE Adv.</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.9</div></div>
+            </div>
+            <a href="college/iitjammu.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- SMVDU -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">Residential Tech</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/mhQ2NRTpDTnZKv2Xc" class="inst-img" alt="SMVDU" /></div>
+          <div class="inst-body">
+            <h4>Shri Mata Vaishno Devi Univ.</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">ESTABLISHED</div><div class="info-value">1999</div></div>
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Technical</div></div>
+              <div class="info-box"><div class="info-label">LOCATION</div><div class="info-value">Katra</div></div>
+              <div class="info-box"><div class="info-label">ADMISSION</div><div class="info-value">JEE Main</div></div>
+            </div>
+            <a href="college/smvdukatra.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- Jammu Univ -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">NAAC A+</span>
+          <div class="inst-img-wrapper"><img src="univ_jammu_building_1774956817912.png" class="inst-img" alt="Jammu Univ" /></div>
+          <div class="inst-body">
+            <h4>University of Jammu</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.8</div></div>
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Public Univ.</div></div>
+              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Jammu</div></div>
+              <div class="info-box"><div class="info-label">ACCR</div><div class="info-value">A+</div></div>
+            </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- TBS -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Award Winning</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PtQRXcWyc5kHrTYO3" class="inst-img" alt="TBS" /></div>
+          <div class="inst-body">
+            <h4>The Business School (TBS)</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1987</div></div>
+              <div class="info-box"><div class="info-label">FEES</div><div class="info-value">₹78k</div></div>
+              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">MBA</div></div>
+              <div class="info-box"><div class="info-label">ADMISSIONS</div><div class="info-value">CAT/MAT</div></div>
+            </div>
+            <a href="college/tbsjammu.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- GMC Jammu -->
+        <div class="inst-card" data-district="jammu">
+          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" class="inst-img" alt="GMC Jammu" /></div>
+          <div class="inst-body">
+            <h4>Government Medical College (GMC)</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1973</div></div>
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Medical</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.7</div></div>
+            </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- MIET -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">NAAC A</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/eyUAJtjEd6Z9GoSwo" class="inst-img" alt="MIET" /></div>
+          <div class="inst-body">
+            <h4>MIET Jammu</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1996</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.6</div></div>
+              <div class="info-box"><div class="info-label">PLACEMENTS</div><div class="info-value">80%</div></div>
+            </div>
+            <a href="college/mietjammu.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- BGSBU -->
+        <div class="inst-card" data-district="rajouri">
+          <div class="inst-img-wrapper"><img src="bgsbu_rajouri_campus_1774956839858.png" class="inst-img" alt="BGSBU" /></div>
+          <div class="inst-body">
+            <h4>Baba Ghulam Shah Badshah Univ.</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">CITY</div><div class="info-value">Rajouri</div></div>
+              <div class="info-box"><div class="info-label">CAMPUS</div><div class="info-value">450ac</div></div>
+              <div class="info-box"><div class="info-label">EST</div><div class="info-value">2002</div></div>
+            </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- GMC Rajouri -->
+        <div class="inst-card" data-district="rajouri">
+          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2" class="inst-img" alt="GMC Rajouri" /></div>
+          <div class="inst-body">
+            <h4>Government Medical College</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Medical</div></div>
+              <div class="info-box"><div class="info-label">EST</div><div class="info-value">2019</div></div>
+              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Rajouri</div></div>
+            </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- Sanskriti -->
+        <div class="inst-card" data-district="global">
+          <div class="inst-img-wrapper"><img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg" class="inst-img" alt="Sanskriti" /></div>
+          <div class="inst-body">
+            <h4>Sanskriti University</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Mathura</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.5</div></div>
+              <div class="info-box"><div class="info-label">RANK</div><div class="info-value">Top 100</div></div>
+            </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:50px;">
+        <button class="btn-main" onclick="toggleSelectionMode(true)" style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected Colleges</button>
+      </div>
+    </div>
+
+    <!-- SCHOOLS HUB -->
+    <div id="schools-hub" class="institutions-container">
+      <div class="institutions-grid">
+        <!-- Jodhamal -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Top Rated School</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/E1eA1pw1sY8Duu3rI" class="inst-img" alt="Jodhamal" /></div>
+          <div class="inst-body">
+            <h4>Jodhamal Public School</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">CURR.</div><div class="info-value">CBSE</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.9</div></div>
+              <div class="info-box"><div class="info-label">FEES</div><div class="info-value">₹1.2L</div></div>
+            </div>
+            <p class="inst-desc">Aligned with the CBSE curriculum, offering academic excellence alongside arts and sports.</p>
+            <a href="college/collegekr.html" class="btn-view">View School Profile</a>
+          </div>
+        </div>
+
+        <!-- Heritage -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Premier Choice</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/kGAIWmGx6AP0bJRyR" class="inst-img" alt="Heritage" /></div>
+          <div class="inst-body">
+            <h4>Heritage School</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.8</div></div>
+              <div class="info-box"><div class="info-label">LABS</div><div class="info-value">High-Tech</div></div>
+              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">Stem</div></div>
+            </div>
+            <p class="inst-desc">Emphasizes STEM and social sciences with high-tech lab facilities and career counseling.</p>
+            <a href="college/heritageschool.html" class="btn-view">View School Profile</a>
+          </div>
+        </div>
+
+        <!-- K.R Girls -->
+        <div class="inst-card" data-district="global">
+          <div class="inst-img-wrapper"><img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="inst-img" alt="KR Girls" /></div>
+          <div class="inst-body">
+            <h4>K.R Girls Inter College</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Mathura</div></div>
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Govt Aided</div></div>
+              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">Girls Ed</div></div>
+            </div>
+            <p class="inst-desc">A respected institution dedicated to empowering girls through quality education and discipline.</p>
+            <a href="college/collegekr.html" class="btn-view">View School Profile</a>
+          </div>
+        </div>
+
+        <!-- JNV -->
+        <div class="inst-card" data-district="global">
+          <div class="inst-img-wrapper"><img src="https://content.jdmagicbox.com/v2/comp/chitradurga/y1/9999p8194.8194.220612230402.h4y1/catalogue/jawahar-navodaya-vidyalaya-uduvally-chitradurga-boarding-schools-elyjpfvk3x.jpg" class="inst-img" alt="JNV" /></div>
+          <div class="inst-body">
+            <h4>Jawahar Navodaya Vidyalaya</h4>
+            <div class="info-grid">
+              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Residential</div></div>
+              <div class="info-box"><div class="info-label">ENTRANCE</div><div class="info-value">JNVST</div></div>
+              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.5</div></div>
+            </div>
+            <p class="inst-desc">Part of the prestigious JNV network, providing free residential education to rural students.</p>
+            <a href="college/collegejavahar.html" class="btn-view">View School Profile</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:50px;">
+        <button class="btn-main" onclick="toggleSelectionMode(true)" style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected Schools</button>
+      </div>
     </div>
   </section>
 
@@ -1515,7 +1662,150 @@
       <a href="#" class="btn-browse">Browse All Mentors</a>
     </div>
   </section>
+  </section>
+
+  <!-- Comparison Floating Bar -->
+  <div id="compare-floating-bar">
+    <span id="compare-count">0 Colleges Selected</span>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <button class="btn-cancel-compare" onclick="toggleSelectionMode(false)">Cancel</button>
+      <a href="compare.html" class="btn-go-compare" id="btn-compare-now">Compare Now</a>
+    </div>
+  </div>
+
   <script>
+    function switchMainTab(tabName) {
+      // Update Buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if(btn.innerText.toLowerCase().includes(tabName)) btn.classList.add('active');
+      });
+
+      // Update Containers
+      document.querySelectorAll('.institutions-container').forEach(cont => cont.classList.remove('active'));
+      document.getElementById(tabName + '-hub').classList.add('active');
+    }
+
+    function filterByDistrict(district) {
+      // Update Chips
+      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+      const activeContent = document.querySelector('.institutions-container.active');
+      
+      // Find the specific chip and set active
+      event.target.classList.add('active');
+
+      const cards = activeContent.querySelectorAll('.inst-card');
+      cards.forEach(card => {
+        if (district === 'all') {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = card.dataset.district === district ? 'flex' : 'none';
+        }
+      });
+    }
+
+    let isSelectionMode = false;
+    let selectedColleges = [];
+
+    function toggleSelectionMode(active) {
+      isSelectionMode = active;
+      const cards = document.querySelectorAll('.inst-card');
+      const bar = document.getElementById('compare-floating-bar');
+      const compareBtns = document.querySelectorAll('.btn-main');
+
+      if (active) {
+        cards.forEach(card => card.classList.add('selection-mode'));
+        bar.classList.add('active');
+        compareBtns.forEach(btn => {
+           if(btn.id !== 'btn-compare-now') btn.innerText = "Select Colleges Below";
+        });
+      } else {
+        cards.forEach(card => {
+          card.classList.remove('selection-mode', 'selected');
+          const check = card.querySelector('.compare-checkbox');
+          if(check) check.classList.remove('selected');
+        });
+        selectedColleges = [];
+        updateCompareBar();
+        bar.classList.remove('active');
+         compareBtns.forEach(btn => {
+           if(btn.id !== 'btn-compare-now') {
+              btn.innerText = btn.href.includes('Colleges') ? "Compare All Colleges" : "Compare All Schools";
+           }
+        });
+      }
+    }
+
+    function toggleCollegeSelection(card, collegeName) {
+      if (!isSelectionMode) {
+        toggleSelectionMode(true);
+      }
+
+      const checkbox = card.querySelector('.compare-checkbox');
+      const index = selectedColleges.indexOf(collegeName);
+
+      if (index > -1) {
+        selectedColleges.splice(index, 1);
+        card.classList.remove('selected');
+        checkbox.classList.remove('selected');
+      } else {
+        if (selectedColleges.length >= 3) {
+          alert("You can compare up to 3 institutions at once.");
+          return;
+        }
+        selectedColleges.push(collegeName);
+        card.classList.add('selected');
+        checkbox.classList.add('selected');
+      }
+
+      updateCompareBar();
+      // Store in localStorage for compare.html
+      localStorage.setItem('selectedColleges', JSON.stringify(selectedColleges));
+    }
+
+    function updateCompareBar() {
+      const countLabel = document.getElementById('compare-count');
+      countLabel.innerText = `${selectedColleges.length} Institution(s) Selected`;
+      
+      const btn = document.getElementById('btn-compare-now');
+      if (selectedColleges.length < 2) {
+        btn.style.opacity = "0.5";
+        btn.style.pointerEvents = "none";
+      } else {
+        btn.style.opacity = "1";
+        btn.style.pointerEvents = "auto";
+      }
+    }
+
+    // Initialize Selection Overlays on all Cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.inst-card');
+      cards.forEach(card => {
+        const name = card.querySelector('h4').innerText;
+        
+        // Add overlay div
+        const overlay = document.createElement('div');
+        overlay.className = 'compare-overlay';
+        overlay.innerHTML = '<div class="compare-checkbox">✓</div>';
+        card.appendChild(overlay);
+
+        card.addEventListener('click', (e) => {
+          // If clicking details button, don't trigger selection
+          if (e.target.classList.contains('btn-view')) return;
+          toggleCollegeSelection(card, name);
+        });
+      });
+
+      // Hook up the main compare buttons
+      const compareAllBtns = document.querySelectorAll('.btn-main');
+      compareAllBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleSelectionMode(!isSelectionMode);
+        });
+      });
+    });
+
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('active');
     }
