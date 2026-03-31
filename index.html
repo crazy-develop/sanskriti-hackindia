@@ -19,7 +19,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      padding-top: 110px; /* Offset for dual-row navbar */
+      padding-top: 110px;
+      /* Offset for dual-row navbar */
       background: #f9fcff;
       color: #1d1d1f;
       line-height: 1.6;
@@ -27,51 +28,53 @@
 
     /* ===== Navbar ===== */
     .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    padding: 0; /* Remove old padding */
-  }
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      padding: 0;
+      /* Remove old padding */
+    }
 
-  .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; /* Stack rows */
-    align-items: stretch;
-  }
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      /* Stack rows */
+      align-items: stretch;
+    }
 
-  /* Top row for Translate */
-  .translate-row {
-    background: #f8fafc;
-    border-bottom: 1px solid #f1f5f9;
-    padding: 5px 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 40px;
-  }
+    /* Top row for Translate */
+    .translate-row {
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 40px;
+    }
 
-  /* Main row for Logo and Links */
-  .nav-main-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    height: 70px;
-  }
+    /* Main row for Logo and Links */
+    .nav-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      height: 70px;
+    }
 
-  .logo {
-    font-size: 28px;
-    font-weight: 800;
-    color: #4a90e2;
-    text-decoration: none;
-    letter-spacing: 1px;
-  }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #4a90e2;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
 
     .nav-links {
       list-style: none;
@@ -102,7 +105,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 120px 20px 80px 20px; /* Increased top padding for clash avoidance */
+      padding: 120px 20px 80px 20px;
+      /* Increased top padding for clash avoidance */
       gap: 50px;
       flex-wrap: wrap;
       max-width: 1200px;
@@ -355,7 +359,7 @@
     .tab-btn.active {
       background: white;
       color: var(--primary-color);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .filter-chips {
@@ -378,14 +382,16 @@
       transition: all 0.3s;
     }
 
-    .filter-chip:hover, .filter-chip.active {
+    .filter-chip:hover,
+    .filter-chip.active {
       border-color: var(--primary-color);
       color: var(--primary-color);
       background: #f0fdfa;
     }
 
     .institutions-container {
-      display: none; /* Controlled by JS */
+      display: none;
+      /* Controlled by JS */
     }
 
     .institutions-container.active {
@@ -394,8 +400,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .section-header {
@@ -499,7 +512,7 @@
       font-size: 0.75rem;
       font-weight: 700;
       color: #00bfa6;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       z-index: 10;
     }
 
@@ -564,7 +577,8 @@
       margin-bottom: 20px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
-      line-clamp: 2; /* Added for standard compatibility */
+      line-clamp: 2;
+      /* Added for standard compatibility */
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -602,13 +616,13 @@
       font-weight: 700;
       transition: all 0.3s;
       display: inline-block;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .btn-main:hover {
       background: #000;
       transform: translateY(-2px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
     }
 
     /* Modern Mentor Showcase */
@@ -623,10 +637,13 @@
       overflow-x: auto;
       padding: 20px 10px;
       scroll-snap-type: x mandatory;
-      scrollbar-width: none; /* Hide scrollbar Firefox */
+      scrollbar-width: none;
+      /* Hide scrollbar Firefox */
     }
 
-    .mentor-scroll-container::-webkit-scrollbar { display: none; }
+    .mentor-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
 
     .mentor-card {
       flex: 0 0 320px;
@@ -641,7 +658,7 @@
 
     .mentor-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       background: white;
       border-color: #00bfa6;
     }
@@ -659,7 +676,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .status-ring {
@@ -780,7 +797,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       z-index: 2000;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -804,297 +821,491 @@
       background: #009e8c;
     }
 
-    .btn-cancel-compare {
-      background: transparent;
-      color: #94a3b8;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-
-
-    .browse-container {
-      text-align: center;
-      padding: 20px;
+    .btn-cancel-compare:hover {
+      color: #1e293b;
     }
 
-    .btn-browse {
-      padding: 12px 25px;
-      background: #00bfa6;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s;
     }
 
-    .btn-browse:hover {
-      background: #009e8c;
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
     }
 
-    /* ===== Responsive Design ===== */
-    @media (max-width: 992px) {
-      .landing-wrapper {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .intro-text h1 {
-        font-size: 2.2rem;
-      }
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      animation: modalSlide 0.4s ease;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 200px;
-        padding: 15px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
+    @keyframes modalSlide {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    @media (max-width: 576px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
+    .modal-header {
+      position: relative;
+      height: 250px;
     }
 
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f7f9fc;
-      margin: 0;
-      padding: 0;
-      line-height: 1.5;
-      color: #333;
-    }
-
-    /* Testimonials */
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .testimonial-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      padding: 25px;
-      transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .stars {
-      color: #f5c518;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-card p {
-      font-size: 15px;
-      margin: 0;
-    }
-
-    .profile {
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      margin-top: 15px;
-    }
-
-    .profile img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 12px;
-      transition: transform 0.3s ease;
-    }
-
-    .testimonial-card:hover .profile img {
-      transform: scale(1.1);
-    }
-
-    .profile h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #000;
-    }
-
-    .profile span {
-      font-size: 13px;
-      color: #666;
-      display: block;
-    }
-
-    /* Animation states */
-    .hidden {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stats section */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      background: #f0f6f7;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .stats .stat h2 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #16a085;
-    }
-
-    .stats .stat p {
-      margin: 5px 0 0;
-      color: #333;
-      font-weight: 500;
-    }
-
-    /* Footer */
-    .footer {
-      background: #0c1322;
-      color: #fff;
-      padding: 50px 20px 20px;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .footer-about .logo {
+      justify-content: center;
+      cursor: pointer;
       font-size: 24px;
-      margin-bottom: 10px;
-      font-weight: bold;
+      color: #333;
+      z-index: 10;
+      transition: 0.3s;
     }
 
-    .footer-about p {
-      font-size: 14px;
-      line-height: 1.6;
+    .modal-close:hover {
+      background: #00bfa6;
+      color: white;
     }
 
-    .footer-about .socials a img {
-      width: 20px;
-      margin-right: 8px;
-      transition: transform 0.3s ease;
+    .modal-body {
+      padding: 30px;
     }
 
-    .footer-about .socials a img:hover {
-      transform: scale(1.2);
+    .modal-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
     }
 
-    .footer-links h4,
-    .footer-support h4,
-    .footer-contact h4 {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .footer-links ul,
-    .footer-support ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links ul li,
-    .footer-support ul li {
+    .detail-item h5 {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       margin-bottom: 5px;
     }
 
-    .footer-links ul li a,
-    .footer-support ul li a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links ul li a:hover,
-    .footer-support ul li a:hover {
-      color: #16a085;
-    }
-
-    .footer-contact p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-
-    .subscribe {
-      display: flex;
-      margin-top: 10px;
-      background: #fff;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .subscribe input {
-      flex: 1;
-      padding: 8px;
-      border: none;
-      outline: none;
-    }
-
-    .subscribe button {
-      background: linear-gradient(90deg, #16a085, #0fb9b1);
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
+    .detail-item p {
+      color: #1e293b;
       font-weight: 600;
-      transition: opacity 0.3s ease;
     }
 
-    .subscribe button:hover {
-      opacity: 0.85;
-    }
+      .browse-container {
+        text-align: center;
+        padding: 20px;
+      }
 
-    .footer .copyright {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 13px;
-      color: #aaa;
-    }
+      .btn-browse {
+        padding: 12px 25px;
+        background: #00bfa6;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s ease;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      .btn-browse:hover {
+        background: #009e8c;
+      }
 
-    .btn {
-      text-decoration: none;
-    }
+      /* ===== Responsive Design ===== */
+      @media (max-width: 992px) {
+        .landing-wrapper {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .intro-text h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background: white;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          width: 200px;
+          padding: 15px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-icon {
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cards {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        color: #333;
+      }
+
+      /* Testimonials Section Upgrade */
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 100px 20px;
+        max-width: 1280px;
+        margin: auto;
+        background: #f8fafc;
+      }
+
+      .testimonial-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 35px;
+        position: relative;
+        border: 1px solid #e2e8f0;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left; /* Align text to left */
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 80px;
+        color: #f1f5f9;
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        border-color: #00bfa6;
+      }
+
+      .stars {
+        color: #fbbf24;
+        font-size: 16px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 4px;
+      }
+
+      .testimonial-card p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 20px;
+      }
+
+      .profile img {
+        width: 55px !important; /* Fixed size */
+        height: 55px !important; /* Fixed size */
+        min-width: 55px; /* Prevent shrinking */
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .profile h3 {
+        font-size: 17px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+      }
+
+      .profile span {
+        font-size: 13px;
+        color: #64748b;
+        font-weight: 500;
+        display: block;
+      }
+
+      /* Animation states */
+      .hidden {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      .show {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.6s ease;
+      }
+
+      /* Stats section */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        background: #f0f6f7;
+        padding: 80px 20px; /* Increased padding */
+        text-align: center;
+      }
+
+      .stats .stat h2 {
+        font-size: 2.5rem;
+        margin: 0;
+        color: #16a085;
+      }
+
+      .stats .stat p {
+        margin: 5px 0 0;
+        color: #333;
+        font-weight: 500;
+      }
+
+      /* Footer */
+      .footer {
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 80px 20px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 191, 166, 0.3), transparent);
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      @media (max-width: 992px) {
+        .footer-container {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer-about .logo {
+        font-size: 32px;
+        font-weight: 800;
+        color: #00bfa6;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .footer-about p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #94a3b8;
+        margin-bottom: 25px;
+      }
+
+      .footer-about .socials {
+        display: flex;
+        gap: 15px;
+      }
+
+      .footer-about .socials a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-about .socials a:hover {
+        background: #00bfa6;
+        transform: translateY(-5px);
+        border-color: #00bfa6;
+      }
+
+      .footer-about .socials a img {
+        width: 20px;
+        filter: invert(1);
+      }
+
+      .footer-links h4,
+      .footer-support h4,
+      .footer-contact h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #fff;
+        position: relative;
+      }
+
+      .footer-links h4::after,
+      .footer-support h4::after,
+      .footer-contact h4::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: #00bfa6;
+      }
+
+      .footer-links ul,
+      .footer-support ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links ul li,
+      .footer-support ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a,
+      .footer-support ul li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .footer-links ul li a:hover,
+      .footer-support ul li a:hover {
+        color: #00bfa6;
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 15px;
+        font-size: 15px;
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .subscribe {
+        display: flex;
+        margin-top: 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .subscribe:focus-within {
+        border-color: #00bfa6;
+        box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.1);
+      }
+
+      .subscribe input {
+        flex: 1;
+        padding: 12px 15px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .subscribe button {
+        background: #00bfa6;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      .subscribe button:hover {
+        background: #009e8c;
+        transform: scale(0.98);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 50px;
+        margin-top: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .btn {
+        text-decoration: none;
+      }
   </style>
 
 </head>
@@ -1197,17 +1408,22 @@
   </div>
 
   <!-- New Game Promotion Section -->
-  <section style="background: linear-gradient(135deg, #047857, #0891b2); padding: 60px 20px; text-align: center; color: white;">
+  <section
+    style="background: linear-gradient(135deg, #047857, #0891b2); padding: 60px 20px; text-align: center; color: white;">
     <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Confused About Your Path? 🧩</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Try our New Interactive Career Puzzle to find your ideal mentorship field!</p>
-    <a href="game.html" class="btn btn-primary" style="background: white; color: #047857; padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Play Career Puzzle Now →</a>
+    <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Try our New Interactive Career Puzzle to find your
+      ideal mentorship field!</p>
+    <a href="game.html" class="btn btn-primary"
+      style="background: white; color: #047857; padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Play
+      Career Puzzle Now →</a>
   </section>
 
   <!-- Explore Hub Section -->
   <section class="institutions-section" id="explore-hub" style="padding: 100px 20px;">
     <div class="explorer-header">
       <h2 style="font-size: 3rem; margin-bottom: 10px; color: #0f172a;">Discover Your Future</h2>
-      <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 40px;">Professional insights into the best educational paths for your career.</p>
+      <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 40px;">Professional insights into the best educational
+        paths for your career.</p>
 
       <div class="explorer-tabs">
         <button class="tab-btn active" onclick="switchMainTab('colleges')">Top Colleges</button>
@@ -1217,7 +1433,8 @@
       <div class="filter-chips">
         <button class="filter-chip active" onclick="filterByDistrict('all')">All Regions</button>
         <button class="filter-chip" onclick="filterByDistrict('jammu')">Jammu</button>
-        <button class="filter-chip" onclick="filterByDistrict('rajouri')">Rajouri & Poonch</button>
+        <button class="filter-chip" onclick="filterByDistrict('rajouri')">Rajouri</button>
+        <button class="filter-chip" onclick="filterByDistrict('poonch')">Poonch</button>
         <button class="filter-chip" onclick="filterByDistrict('global')">Global Top</button>
       </div>
     </div>
@@ -1228,14 +1445,27 @@
         <!-- IIT Jammu -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier Institute</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/JDmCy7MCwh4K3zaxU" class="inst-img" alt="IIT Jammu" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/JDmCy7MCwh4K3zaxU" class="inst-img"
+              alt="IIT Jammu" /></div>
           <div class="inst-body">
             <h4>IIT Jammu</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">ESTABLISHED</div><div class="info-value">2016</div></div>
-              <div class="info-box"><div class="info-label">NIRF RANK</div><div class="info-value">62nd</div></div>
-              <div class="info-box"><div class="info-label">ADMISSION</div><div class="info-value">JEE Adv.</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.9</div></div>
+              <div class="info-box">
+                <div class="info-label">ESTABLISHED</div>
+                <div class="info-value">2016</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">NIRF RANK</div>
+                <div class="info-value">62nd</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ADMISSION</div>
+                <div class="info-value">JEE Adv.</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.9</div>
+              </div>
             </div>
             <a href="college/iitjammu.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1244,14 +1474,27 @@
         <!-- SMVDU -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">Residential Tech</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/mhQ2NRTpDTnZKv2Xc" class="inst-img" alt="SMVDU" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/mhQ2NRTpDTnZKv2Xc" class="inst-img"
+              alt="SMVDU" /></div>
           <div class="inst-body">
             <h4>Shri Mata Vaishno Devi Univ.</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">ESTABLISHED</div><div class="info-value">1999</div></div>
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Technical</div></div>
-              <div class="info-box"><div class="info-label">LOCATION</div><div class="info-value">Katra</div></div>
-              <div class="info-box"><div class="info-label">ADMISSION</div><div class="info-value">JEE Main</div></div>
+              <div class="info-box">
+                <div class="info-label">ESTABLISHED</div>
+                <div class="info-value">1999</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Technical</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOCATION</div>
+                <div class="info-value">Katra</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ADMISSION</div>
+                <div class="info-value">JEE Main</div>
+              </div>
             </div>
             <a href="college/smvdukatra.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1260,14 +1503,27 @@
         <!-- Jammu Univ -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">NAAC A+</span>
-          <div class="inst-img-wrapper"><img src="univ_jammu_building_1774956817912.png" class="inst-img" alt="Jammu Univ" /></div>
+          <div class="inst-img-wrapper"><img src="univ_jammu_building_1774956817912.png" class="inst-img"
+              alt="Jammu Univ" /></div>
           <div class="inst-body">
             <h4>University of Jammu</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.8</div></div>
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Public Univ.</div></div>
-              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Jammu</div></div>
-              <div class="info-box"><div class="info-label">ACCR</div><div class="info-value">A+</div></div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.8</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Public Univ.</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Jammu</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ACCR</div>
+                <div class="info-value">A+</div>
+              </div>
             </div>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1276,14 +1532,27 @@
         <!-- TBS -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Award Winning</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/PtQRXcWyc5kHrTYO3" class="inst-img" alt="TBS" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PtQRXcWyc5kHrTYO3" class="inst-img"
+              alt="TBS" /></div>
           <div class="inst-body">
             <h4>The Business School (TBS)</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1987</div></div>
-              <div class="info-box"><div class="info-label">FEES</div><div class="info-value">₹78k</div></div>
-              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">MBA</div></div>
-              <div class="info-box"><div class="info-label">ADMISSIONS</div><div class="info-value">CAT/MAT</div></div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1987</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEES</div>
+                <div class="info-value">₹78k</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FOCUS</div>
+                <div class="info-value">MBA</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ADMISSIONS</div>
+                <div class="info-value">CAT/MAT</div>
+              </div>
             </div>
             <a href="college/tbsjammu.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1291,13 +1560,23 @@
 
         <!-- GMC Jammu -->
         <div class="inst-card" data-district="jammu">
-          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" class="inst-img" alt="GMC Jammu" /></div>
+          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d"
+              class="inst-img" alt="GMC Jammu" /></div>
           <div class="inst-body">
             <h4>Government Medical College (GMC)</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1973</div></div>
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Medical</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.7</div></div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1973</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Medical</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.7</div>
+              </div>
             </div>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1306,27 +1585,72 @@
         <!-- MIET -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">NAAC A</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/eyUAJtjEd6Z9GoSwo" class="inst-img" alt="MIET" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/eyUAJtjEd6Z9GoSwo" class="inst-img"
+              alt="MIET" /></div>
           <div class="inst-body">
             <h4>MIET Jammu</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">EST</div><div class="info-value">1996</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.6</div></div>
-              <div class="info-box"><div class="info-label">PLACEMENTS</div><div class="info-value">80%</div></div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1996</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.6</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">PLACEMENTS</div>
+                <div class="info-value">80%</div>
+              </div>
             </div>
             <a href="college/mietjammu.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
+        <!-- ITI Jammu -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Vocational Training</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/nSSF63ZkC0Vmv4yeH" class="inst-img" alt="ITI Jammu" /></div>
+          <div class="inst-body">
+            <h4>Govt. ITI Jammu (Shakti Nagar)</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">NCVT</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TRADES</div>
+                <div class="info-value">Engg & Non-Engg</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ELIGIBILITY</div>
+                <div class="info-value">10th/12th</div>
+              </div>
+            </div>
+            <p class="inst-desc" style="display:none;">Offers high-tech workshops and computer labs for vocational excellence in Shakti Nagar.</p>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
         <!-- BGSBU -->
         <div class="inst-card" data-district="rajouri">
-          <div class="inst-img-wrapper"><img src="bgsbu_rajouri_campus_1774956839858.png" class="inst-img" alt="BGSBU" /></div>
+          <div class="inst-img-wrapper"><img src="bgsbu_rajouri_campus_1774956839858.png" class="inst-img"
+              alt="BGSBU" /></div>
           <div class="inst-body">
             <h4>Baba Ghulam Shah Badshah Univ.</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">CITY</div><div class="info-value">Rajouri</div></div>
-              <div class="info-box"><div class="info-label">CAMPUS</div><div class="info-value">450ac</div></div>
-              <div class="info-box"><div class="info-label">EST</div><div class="info-value">2002</div></div>
+              <div class="info-box">
+                <div class="info-label">CITY</div>
+                <div class="info-value">Rajouri</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CAMPUS</div>
+                <div class="info-value">450ac</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2002</div>
+              </div>
             </div>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
@@ -1334,34 +1658,131 @@
 
         <!-- GMC Rajouri -->
         <div class="inst-card" data-district="rajouri">
-          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2" class="inst-img" alt="GMC Rajouri" /></div>
+          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2"
+              class="inst-img" alt="GMC Rajouri" /></div>
           <div class="inst-body">
             <h4>Government Medical College</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Medical</div></div>
-              <div class="info-box"><div class="info-label">EST</div><div class="info-value">2019</div></div>
-              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Rajouri</div></div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Medical</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2019</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Rajouri</div>
+              </div>
             </div>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- Valley View Institute -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">Teacher Training Focus</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/Bi0mWf3dmYSIEcEfy" class="inst-img" alt="Valley View Institute" /></div>
+          <div class="inst-body">
+            <h4>Valley View Institute (Sunderbani)</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2001</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">COURSES</div>
+                <div class="info-value">BA, B.Com, BCA</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Sunderbani</div>
+              </div>
+            </div>
+            <p class="inst-desc" style="display:none;">Recognized by NCTE, providing quality undergraduate education in Arts, Commerce, and Computer Apps.</p>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- GDC Budhal -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">NAAC Accredited</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/eXPZ6x80psEACA9ek" class="inst-img" alt="GDC Budhal" /></div>
+          <div class="inst-body">
+            <h4>Govt. Degree College Budhal</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2008</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">STREAMS</div>
+                <div class="info-value">Arts & Science</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Budhal</div>
+              </div>
+            </div>
+            <p class="inst-desc" style="display:none;">NAAC accredited institution with smart classrooms, science labs, and Wi-Fi campus in Budhal.</p>
+            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- GDC Rajouri -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">NAAC Accredited</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/fiMCXMUuqI2wKvBDv" class="inst-img" alt="GDC Rajouri" /></div>
+          <div class="inst-body">
+            <h4>Government Degree College Rajouri</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1981</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEE</div>
+                <div class="info-value">₹4.1K/yr</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ADMISSIONS</div>
+                <div class="info-value">Merit-Based</div>
+              </div>
+            </div>
+            <p class="inst-desc" style="display:none;">Offers BA, BSc, BCom, and BBA with a focus on academics and extracurricular activities.</p>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- Sanskriti -->
         <div class="inst-card" data-district="global">
-          <div class="inst-img-wrapper"><img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg" class="inst-img" alt="Sanskriti" /></div>
+          <div class="inst-img-wrapper"><img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg"
+              class="inst-img" alt="Sanskriti" /></div>
           <div class="inst-body">
             <h4>Sanskriti University</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Mathura</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.5</div></div>
-              <div class="info-box"><div class="info-label">RANK</div><div class="info-value">Top 100</div></div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Mathura</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.5</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RANK</div>
+                <div class="info-value">Top 100</div>
+              </div>
             </div>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
       </div>
       <div style="text-align:center; margin-top:50px;">
-        <button class="btn-main" onclick="toggleSelectionMode(true)" style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected Colleges</button>
+        <button class="btn-main" onclick="toggleSelectionMode(true)"
+          style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected
+          Colleges</button>
       </div>
     </div>
 
@@ -1371,516 +1792,812 @@
         <!-- Jodhamal -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Top Rated School</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/E1eA1pw1sY8Duu3rI" class="inst-img" alt="Jodhamal" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/E1eA1pw1sY8Duu3rI" class="inst-img"
+              alt="Jodhamal" /></div>
           <div class="inst-body">
             <h4>Jodhamal Public School</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">CURR.</div><div class="info-value">CBSE</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.9</div></div>
-              <div class="info-box"><div class="info-label">FEES</div><div class="info-value">₹1.2L</div></div>
+              <div class="info-box">
+                <div class="info-label">CURR.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.9</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEES</div>
+                <div class="info-value">₹1.2L</div>
+              </div>
             </div>
-            <p class="inst-desc">Aligned with the CBSE curriculum, offering academic excellence alongside arts and sports.</p>
-            <a href="college/collegekr.html" class="btn-view">View School Profile</a>
+            <p class="inst-desc">Aligned with the CBSE curriculum, offering academic excellence alongside arts and
+              sports.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'Jodhamal Public School',
+              img: 'https://share.google/images/E1eA1pw1sY8Duu3rI',
+              est: '2005',
+              affil: 'CBSE',
+              contact: '+91-191-2460711',
+              email: 'jodhamalpublicschool@gmail.com',
+              web: 'jodhamalschool.org',
+              desc: 'Jodhamal Public School is committed to providing a high-quality educational experience that encourages students to be independent thinkers and lifelong learners.'
+            })" class="btn-view">View School Details</a>
           </div>
         </div>
 
         <!-- Heritage -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier Choice</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/kGAIWmGx6AP0bJRyR" class="inst-img" alt="Heritage" /></div>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/kGAIWmGx6AP0bJRyR" class="inst-img"
+              alt="Heritage" /></div>
           <div class="inst-body">
             <h4>Heritage School</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.8</div></div>
-              <div class="info-box"><div class="info-label">LABS</div><div class="info-value">High-Tech</div></div>
-              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">Stem</div></div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.8</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LABS</div>
+                <div class="info-value">High-Tech</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FOCUS</div>
+                <div class="info-value">Stem</div>
+              </div>
             </div>
-            <p class="inst-desc">Emphasizes STEM and social sciences with high-tech lab facilities and career counseling.</p>
-            <a href="college/heritageschool.html" class="btn-view">View School Profile</a>
+            <p class="inst-desc">Emphasizes STEM and social sciences with high-tech lab facilities and career
+              counseling.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'Heritage School',
+              img: 'https://share.google/images/kGAIWmGx6AP0bJRyR',
+              est: '2005',
+              affil: 'CBSE',
+              contact: '+91-191-2468977',
+              email: 'heritageschooljammu@gmail.com',
+              web: 'heritageschooljammu.com',
+              desc: 'Heritage School focuses on academic excellence coupled with character building and personality development.'
+            })" class="btn-view">View School Details</a>
           </div>
         </div>
 
         <!-- K.R Girls -->
         <div class="inst-card" data-district="global">
-          <div class="inst-img-wrapper"><img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="inst-img" alt="KR Girls" /></div>
+          <div class="inst-img-wrapper"><img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="inst-img"
+              alt="KR Girls" /></div>
           <div class="inst-body">
             <h4>K.R Girls Inter College</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">LOC</div><div class="info-value">Mathura</div></div>
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Govt Aided</div></div>
-              <div class="info-box"><div class="info-label">FOCUS</div><div class="info-value">Girls Ed</div></div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Mathura</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Govt Aided</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FOCUS</div>
+                <div class="info-value">Girls Ed</div>
+              </div>
             </div>
-            <p class="inst-desc">A respected institution dedicated to empowering girls through quality education and discipline.</p>
-            <a href="college/collegekr.html" class="btn-view">View School Profile</a>
+            <p class="inst-desc">A respected institution dedicated to empowering girls through quality education and
+              discipline.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'K.R Girls Inter College',
+              img: 'https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg',
+              est: '1980',
+              affil: 'UP Board',
+              contact: '+91-565-240xxxx',
+              email: 'krgirls@edu.in',
+              web: 'krgirls.edu.in',
+              desc: 'A respected institution dedicated to empowering girls through quality education and discipline.'
+            })" class="btn-view">View School Details</a>
           </div>
         </div>
 
-        <!-- JNV -->
-        <div class="inst-card" data-district="global">
-          <div class="inst-img-wrapper"><img src="https://content.jdmagicbox.com/v2/comp/chitradurga/y1/9999p8194.8194.220612230402.h4y1/catalogue/jawahar-navodaya-vidyalaya-uduvally-chitradurga-boarding-schools-elyjpfvk3x.jpg" class="inst-img" alt="JNV" /></div>
+        <!-- JNV Poonch -->
+        <div class="inst-card" data-district="poonch">
+          <span class="inst-badge">Residential Excellence</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Poonch" /></div>
           <div class="inst-body">
-            <h4>Jawahar Navodaya Vidyalaya</h4>
+            <h4>JNV Poonch</h4>
             <div class="info-grid">
-              <div class="info-box"><div class="info-label">TYPE</div><div class="info-value">Residential</div></div>
-              <div class="info-box"><div class="info-label">ENTRANCE</div><div class="info-value">JNVST</div></div>
-              <div class="info-box"><div class="info-label">RATING</div><div class="info-value">⭐ 4.5</div></div>
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1986</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ENTRANCE</div>
+                <div class="info-value">JNVST</div>
+              </div>
             </div>
-            <p class="inst-desc">Part of the prestigious JNV network, providing free residential education to rural students.</p>
-            <a href="college/collegejavahar.html" class="btn-view">View School Profile</a>
+            <p class="inst-desc">Quality, free, and residential education for talented rural children in Poonch.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'JNV Poonch',
+              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              est: '1986',
+              affil: 'CBSE',
+              contact: '0196-522xxxx',
+              email: 'jnvpoonch@gov.in',
+              web: 'navodaya.gov.in',
+              desc: 'Jawahar Navodaya Vidyalaya, Poonch provides quality residential education. Students are selected through the JNVST for Class 6 admissions, with a focus on holistic development.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- HSS Boys Poonch -->
+        <div class="inst-card" data-district="poonch">
+          <span class="inst-badge">Heritage School</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/oG7AbtI1FSRe28UB9" class="inst-img" alt="HSS Boys Poonch" /></div>
+          <div class="inst-body">
+            <h4>HSS Boys Poonch</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1935</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Govt. Boys</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CLASSES</div>
+                <div class="info-value">9-12</div>
+              </div>
+            </div>
+            <p class="inst-desc">One of the oldest government schools in Poonch, providing quality education since 1935.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'HSS Boys Poonch',
+              img: 'https://share.google/images/oG7AbtI1FSRe28UB9',
+              est: '1935',
+              affil: 'JKBOSE',
+              contact: 'N/A',
+              email: 'hssboyspoonch@gmail.com',
+              web: 'jkdse.nic.in',
+              desc: 'Higher Secondary School Boys Poonch is a premier government institution located in Ward No 3. It focuses on academic excellence for classes 9 to 12 with a dedicated faculty of 35 teachers.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- International School Rajouri -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">Premier in Rajouri</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PIaoY07OBzYK6Okbd" class="inst-img" alt="International School Rajouri" /></div>
+          <div class="inst-body">
+            <h4>International School Rajouri</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1970</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Co-ed</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LIBRARY</div>
+                <div class="info-value">3k Books</div>
+              </div>
+            </div>
+            <p class="inst-desc">Leading co-educational institution in Rajouri with modern IT and library facilities since 1970.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'International School Rajouri',
+              img: 'https://share.google/images/PIaoY07OBzYK6Okbd',
+              est: '1970',
+              affil: 'JKBOSE/CBSE',
+              contact: '0196-2263258',
+              email: 'israjour@gmail.com',
+              web: 'israjouri.edu.in',
+              desc: 'International School Rajouri is a premier co-educational senior secondary institution. It features a pucca building, 30 computers in its lab, and a rich library with 3,000+ books.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- KV Rajouri -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">PM Shri School</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/eHFALnOxPgknz7hvS" class="inst-img" alt="KV Rajouri" /></div>
+          <div class="inst-body">
+            <h4>PM Shri KV BSF Campus Rajouri</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1980</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEE</div>
+                <div class="info-value">Nominal</div>
+              </div>
+            </div>
+            <p class="inst-desc">A Central Government school offering holistic, child-centered education with PCM, PCB, and Commerce streams.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'PM Shri KV BSF Campus Rajouri',
+              img: 'https://share.google/images/eHFALnOxPgknz7hvS',
+              est: '1980',
+              affil: 'CBSE',
+              contact: '0196-2263xxx',
+              email: 'kvrajouri@gmail.com',
+              web: 'rajouri.kvs.ac.in',
+              desc: 'PM Shri Kendriya Vidyalaya BSF Campus Rajouri provides quality, affordable education. It emphasizes holistic development through PCM, PCB, Commerce, and Arts streams until class 12.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- Garib Nawaz Public School -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">Focus on Basic Learning</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/KQE1lJcfbZbw6cEHA" class="inst-img" alt="Garib Nawaz Public School" /></div>
+          <div class="inst-body">
+            <h4>Garib Nawaz Public School</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">TYPE</div>
+                <div class="info-value">Private</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CLASSROOMS</div>
+                <div class="info-value">6</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Rajouri</div>
+              </div>
+            </div>
+            <p class="inst-desc">Provides basic educational facilities including computer-aided learning and a focused teaching staff.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'Garib Nawaz Public School',
+              img: 'https://share.google/images/KQE1lJcfbZbw6cEHA',
+              est: 'N/A',
+              affil: 'JKBOSE',
+              contact: 'N/A',
+              email: 'gnpsrajouri@gmail.com',
+              web: 'N/A',
+              desc: 'Garib Nawaz Public School is a private institution in Rajouri that provides computer-aided learning facilities and focused education through its dedicated staff for various subjects.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- JNV Rajouri -->
+        <div class="inst-card" data-district="rajouri">
+          <span class="inst-badge">Residential Excellence</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/RFlLU9JqtoUbR8GUn" class="inst-img" alt="JNV Rajouri" /></div>
+          <div class="inst-body">
+            <h4>JNV Rajouri (Kotranka)</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1986</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ENTRANCE</div>
+                <div class="info-value">JNVST</div>
+              </div>
+            </div>
+            <p class="inst-desc">Premier residential school in Kotranka, providing free quality education to rural toppers.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'JNV Rajouri (Kotranka)',
+              img: 'https://share.google/images/RFlLU9JqtoUbR8GUn',
+              est: '1986',
+              affil: 'CBSE',
+              contact: '9749444464',
+              email: 'jnvrajouri2021@gmail.com',
+              web: 'navodaya.gov.in',
+              desc: 'PM SHRI Jawahar Navodaya Vidyalaya Rajouri, located in Village Kotranka, is a co-educational residential institution. Admission is through district-level JNVST for Class 6 and LEST for higher classes.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- JNV Jammu-I (Gharota) -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Free Residential</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Jammu-I" /></div>
+          <div class="inst-body">
+            <h4>JNV Jammu-I (Gharota)</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Gharota</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">0191-2624919</div>
+              </div>
+            </div>
+            <p class="inst-desc">Providing a comprehensive residential program with modern facilities in the Gharota district.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'JNV Jammu-I (Gharota)',
+              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              est: '1986',
+              affil: 'CBSE',
+              contact: '0191-2624919',
+              email: 'jnvjammu1@gov.in',
+              web: 'navodaya.gov.in',
+              desc: 'Jawahar Navodaya Vidyalaya Gharota offers full boarding facilities and follows the CBSE curriculum, aiming for academic and cultural excellence.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- JNV Jammu-II (Akhnoor) -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">New Excellence</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Jammu-II" /></div>
+          <div class="inst-body">
+            <h4>JNV Jammu-II (Akhnoor)</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2017</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOC</div>
+                <div class="info-value">Akhnoor</div>
+              </div>
+            </div>
+            <p class="inst-desc">A newer institution in the JNV network, providing top-tier education to rural toppers.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'JNV Jammu-II (Akhnoor)',
+              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              est: '2017',
+              affil: 'CBSE',
+              contact: 'N/A',
+              email: 'jnvjammu2@gov.in',
+              web: 'navodaya.gov.in',
+              desc: 'JNV Akhnoor provides quality, free, and residential education to talented children, established recently in 2017.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- KC International School -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Application-Based</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/4HN0uB4mmu2C7dp4j" class="inst-img" alt="KC International School" /></div>
+          <div class="inst-body">
+            <h4>KC International School</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2004</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">+91-191-2954747</div>
+              </div>
+            </div>
+            <p class="inst-desc">Emphasizes practical, application-based learning to foster critical thinking and real-world skills.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'KC International School',
+              img: 'https://share.google/images/4HN0uB4mmu2C7dp4j',
+              est: '2004',
+              affil: 'CBSE',
+              contact: '+91-191-2954747',
+              email: 'info@kcinternationalschool.org',
+              web: 'kcinternationalschool.org',
+              desc: 'Emphasizes practical, application-based learning to foster critical thinking and real-world skills.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- JK Public School -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Premier Institution</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/94qxfGDUkSDXEzVg0" class="inst-img" alt="JK Public School" /></div>
+          <div class="inst-body">
+            <h4>JK Public School</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1992</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">070515 22290</div>
+              </div>
+            </div>
+            <p class="inst-desc">One of the most prestigious schools in Jammu, offering quality education and a holistic environment for student development.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'JK Public School',
+              img: 'https://share.google/images/94qxfGDUkSDXEzVg0',
+              est: '1992',
+              affil: 'CBSE',
+              contact: '070515 22290',
+              email: 'jkpublicschool@gmail.com',
+              web: 'jkpschool.com',
+              desc: 'JK Public School prides itself on providing a balanced platform for academic rigor and extracurricular excellence, preparing students for global challenges.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- APS Jammu Cantt -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Army Institution</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/4Doa1MDhvQGzEcB7M" class="inst-img" alt="APS Jammu Cantt" /></div>
+          <div class="inst-body">
+            <h4>APS Jammu Cantt</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1984</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">+91 9086030003</div>
+              </div>
+            </div>
+            <p class="inst-desc">Focuses on providing a comprehensive education, fostering intelligence, character, and a balanced personality.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'APS Jammu Cantt',
+              img: 'https://share.google/images/4Doa1MDhvQGzEcB7M',
+              est: '1984',
+              affil: 'CBSE',
+              contact: '+91 9086030003',
+              email: 'contact@apsjammucantt.com',
+              web: 'apsjammucantt.com',
+              desc: 'Army Public School Jammu Cantt focuses on providing a comprehensive education, fostering intelligence, character, and a balanced personality through disciplined learning.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- APS Kaluchak -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Value-Based</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/wZQxNrGPrI7T6lqHI" class="inst-img" alt="APS Kaluchak" /></div>
+          <div class="inst-body">
+            <h4>APS Kaluchak</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1980</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.8</div>
+              </div>
+            </div>
+            <p class="inst-desc">Implements a value-based education through scholastic and co-scholastic activities for all-around development.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'APS Kaluchak',
+              img: 'https://share.google/images/wZQxNrGPrI7T6lqHI',
+              est: '1980',
+              affil: 'CBSE',
+              contact: 'N/A',
+              email: 'apskaluchak@gmail.com',
+              web: 'apskaluchak.edu.in',
+              desc: 'Army Public School Kaluchak implements a value-based education through scholastic and co-scholastic activities, aiming to develop intellectual, social, emotional, and physical skills.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- APS Damana -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Premier APS</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/DgZapMAuXVrtvni2S" class="inst-img" alt="APS Damana" /></div>
+          <div class="inst-body">
+            <h4>APS Damana</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1986</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">+91 6006413231</div>
+              </div>
+            </div>
+            <p class="inst-desc">Aims to provide quality education and develop well-rounded individuals through disciplined academic rigor.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'APS Damana',
+              img: 'https://share.google/images/DgZapMAuXVrtvni2S',
+              est: '1986',
+              affil: 'CBSE (780013)',
+              contact: '+91 6006413231',
+              email: 'apsdamana@gmail.com',
+              web: 'apsdamana.org.in',
+              desc: 'Army Public School Damana aims to provide quality education and develop well-rounded individuals, emphasizing character building and academic excellence.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- APS Ratnuchak -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Excellence Driven</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/jgOEn5XgvrNtscwLu" class="inst-img" alt="APS Ratnuchak" /></div>
+          <div class="inst-body">
+            <h4>APS Ratnuchak</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1983</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">RATING</div>
+                <div class="info-value">⭐ 4.8</div>
+              </div>
+            </div>
+            <p class="inst-desc">Aims to achieve academic excellence and develop well-adjusted, adaptable, and integrated personalities.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'APS Ratnuchak',
+              img: 'https://share.google/images/jgOEn5XgvrNtscwLu',
+              est: '1983',
+              affil: 'CBSE',
+              contact: 'N/A',
+              email: 'apsratnuchak@gmail.com',
+              web: 'apsratnuchak.com',
+              desc: 'Army Public School Ratnuchak aims to achieve academic excellence and develop well-adjusted, adaptable, and integrated personalities through a balanced curriculum.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- Springdales School -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge">Holistic Learning</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/xnK3HANmqoGIyoqpS" class="inst-img" alt="Springdales School" /></div>
+          <div class="inst-body">
+            <h4>Springdales School</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2013</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">CBSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CONTACT</div>
+                <div class="info-value">0191-2642888</div>
+              </div>
+            </div>
+            <p class="inst-desc">Focuses on holistic, activity-based, and experiential learning for classes Nursery to 12.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'Springdales School',
+              img: 'https://share.google/images/xnK3HANmqoGIyoqpS',
+              est: '2013',
+              affil: 'CBSE',
+              contact: '0191-2642888',
+              email: 'info@springdales.edu.in',
+              web: 'springdales.org',
+              desc: 'Springdales School follows the CBSE curriculum with a focus on holistic, activity-based, and experiential learning, nurturing students for a bright future.'
+            })" class="btn-view">View School Details</a>
+          </div>
+        </div>
+
+        <!-- Christ School Poonch -->
+        <div class="inst-card" data-district="poonch">
+          <span class="inst-badge">Premier in Poonch</span>
+          <div class="inst-img-wrapper"><img src="https://share.google/images/zXWvjxmtMQQ8VPnw7" class="inst-img" alt="Christ School Poonch" /></div>
+          <div class="inst-body">
+            <h4>Christ School Poonch</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">1990</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">AFFIL.</div>
+                <div class="info-value">JKBOSE</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">LOCATION</div>
+                <div class="info-value">Poonch</div>
+              </div>
+            </div>
+            <p class="inst-desc">A unique and creative approach to education, fostering character and intellectual competence since 1990.</p>
+            <a href="javascript:void(0)" onclick="showDetails({
+              name: 'Christ School Poonch',
+              img: 'https://share.google/images/zXWvjxmtMQQ8VPnw7',
+              est: '1990',
+              affil: 'JKBOSE',
+              contact: '0196-522xxxx',
+              email: 'christpoonch@gmail.com',
+              web: 'christschoolpoonch.com',
+              desc: 'Christ School Poonch is managed by the CMI Congregation. It adopts a unique and creative approach to education, aiming to foster intellectually competent and just individuals.'
+            })" class="btn-view">View School Details</a>
           </div>
         </div>
       </div>
       <div style="text-align:center; margin-top:50px;">
-        <button class="btn-main" onclick="toggleSelectionMode(true)" style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected Schools</button>
+        <button class="btn-main" onclick="toggleSelectionMode(true)"
+          style="width: auto; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;">Compare Selected
+          Schools</button>
       </div>
     </div>
   </section>
+
+  <!-- Comparison UI -->
+  <div id="compare-floating-bar">
+    <span><strong id="compare-count">0</strong> institutions selected</span>
+    <div style="display: flex; gap: 15px;">
+      <button class="btn-cancel-compare" onclick="toggleSelectionMode(false)">Cancel</button>
+      <a href="compare.html" class="btn-go-compare">Compare Now →</a>
+    </div>
+  </div>
+
 
 
   <!-- Mentor Section -->
   <section class="mentor-section">
-    <h2 id="mentors">Meet Our <span>Mentors</span></h2>
-    <p>Verified mentors from top institutions ready to guide you.</p>
-    ...
-    <div class="mentor-container">
+    <div class="section-header" style="text-align: center;">
+      <h2 id="mentors">Expert <span>Partners</span></h2>
+      <p>Connect with top-tier mentors from industry leaders and prestigious institutions.</p>
+    </div>
+
+    <div class="mentor-scroll-container">
+      <!-- Mentor 1 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Dinesh Kumar</span>
-          <span class="rating">⭐ 4.8</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop" alt="Sarah J." />
+          <div class="status-ring"></div>
         </div>
-        <img
-          src="https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWFkMTY0N2MwLTBkNjItMTFmMC05YzRkLWExYjFjMjMzZTcyMi5qcGc="
-          alt="Mentor 1" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Mathura</span>
-            <span>Experience: 2 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Computer Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>Sarah Johnson</h4>
+        <p class="mentor-desc">Senior Architect • Google</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 4.9</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">8+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
 
+      <!-- Mentor 2 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Kalpana Yadav</span>
-          <span class="rating">⭐ 4.8</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop" alt="Arjun M." />
+          <div class="status-ring"></div>
         </div>
-        <img
-          src="data:image/jpeg;base64,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"
-          alt="Mentor 2" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>Arjun Mehta</h4>
+        <p class="mentor-desc">Product Manager • Amazon</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 4.8</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">6+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
 
-
+      <!-- Mentor 3 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Neel sir</span>
-          <span class="rating">⭐ 4.8</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Priya K." />
+          <div class="status-ring"></div>
         </div>
-        <img src="https://imagenes.20minutos.es/files/image_640_360/uploads/imagenes/2025/03/28/sam-altman.jpeg"
-          alt="Mentor 3" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>Priya Kapoor</h4>
+        <p class="mentor-desc">Data Scientist • Microsoft</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 4.9</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">5+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
 
+      <!-- Mentor 4 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Avani </span>
-          <span class="rating">⭐ 4.8</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Rohit B." />
+          <div class="status-ring"></div>
         </div>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFoXexy5vlxuUQJn5FGskdjmMuKVngDpxE2s-8t7n0hOBDQf8oibngjT63bS0IXXU9E8&usqp=CAU"
-          alt="Mentor 4" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>Rohit Bansal</h4>
+        <p class="mentor-desc">AI Specialist • OpenAI</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 5.0</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">7+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
-      </div>
-      <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Rishi</span>
-          <span class="rating">⭐ 4.8</span>
-        </div>
-        <img
-          src="https://i.redd.it/the-office-in-studio-ghibli-style-v0-cj3qppd3b1re1.png?width=1024&format=png&auto=webp&s=2dc72f5e9f86f77cd3a0916e73bfb53c626a85e4"
-          alt="Mentor 5" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
-        </div>
-      </div>
-      <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Om Aditya </span>
-          <span class="rating">⭐ 4.8</span>
-        </div>
-        <img
-          src="https://preview.redd.it/a-professional-man-ghibli-style-picture-v0-edvqknmat5se1.png?width=640&crop=smart&auto=webp&s=a4a0a2bdfa19650c59a9777379fc4a0fb5d315a4"
-          alt="Mentor 6" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
-        </div>
-      </div>
-      <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Dhruv Sir</span>
-          <span class="rating">⭐ 4.8</span>
-        </div>
-        <img
-          src="https://easy-peasy.ai/cdn-cgi/image/quality=70,format=auto,width=500/https://media.easy-peasy.ai/2aeb072f-e67a-436e-8c7d-dd1d51782a7e/57e39569-c934-433e-bcec-6f3e16f53779.png"
-          alt="Mentor 7" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
-        </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
 
+      <!-- Mentor 5 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Brajesh Sir</span>
-          <span class="rating">⭐ 4.8</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Ananya T." />
+          <div class="status-ring"></div>
         </div>
-        <img src="https://i.pinimg.com/736x/4e/5e/60/4e5e60ef292adcf5e325aa4ee79c5ff0.jpg" alt="Mentor 8" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Delhi</span>
-            <span>Experience: 5 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Engineering</span>
-            <span>Data Science</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>Ananya Thakur</h4>
+        <p class="mentor-desc">UI/UX Designer • Adobe</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 4.9</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">4+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
 
-
+      <!-- Mentor 6 -->
       <div class="mentor-card">
-        <div class="mentor-header">
-          <span>Jane Smith</span>
-          <span class="rating">⭐ 4.7</span>
+        <div class="mentor-avatar-wrapper">
+          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&h=200&fit=crop" alt="David S." />
+          <div class="status-ring"></div>
         </div>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-R8cLG9Ou887vprF3g3-6B9DSaL8prl0UaDYL3c3yjPRTknHDdOZvb1pU3av2y-cRp6k&usqp=CAU"
-          alt="Mentor 9" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Mumbai</span>
-            <span>Experience: 4 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Management</span>
-            <span>Marketing</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
+        <h4>David Smith</h4>
+        <p class="mentor-desc">Software Engineer • Meta</p>
+        <div class="mentor-stats">
+          <div class="stat-item"><span class="stat-value">⭐ 4.7</span><span class="stat-label">Rating</span></div>
+          <div class="stat-item"><span class="stat-value">10+ Yrs</span><span class="stat-label">Exp</span></div>
         </div>
-      </div>
-
-      <div class="mentor-card">
-        <div class="mentor-header">
-          <span>David Lee</span>
-          <span class="rating">⭐ 4.9</span>
-        </div>
-        <img src="https://i.pinimg.com/736x/f3/1d/6f/f31d6fecc1b454c5f99907aac596ca29.jpg" alt="Mentor 10" />
-        <div class="mentor-info">
-          <div class="mentor-meta">
-            <span>City: Bangalore</span>
-            <span>Experience: 6 yrs</span>
-          </div>
-          <div class="tags">
-            <span>Computer Science</span>
-            <span>AI/ML</span>
-          </div>
-          <div class="availability">Available Now</div>
-          <a href="mentorbook.html" class="btn-session">Book Session</a>
-        </div>
+        <a href="mentorbook.html" class="btn-session">Book Session</a>
       </div>
     </div>
 
-    <div class="browse-container">
-      <a href="#" class="btn-browse">Browse All Mentors</a>
+    <div style="text-align:center; margin-top:50px;">
+      <a href="mentors.html" class="btn-main" style="border-radius: 50px;">Explore All Mentors</a>
     </div>
   </section>
-  </section>
 
-  <!-- Comparison Floating Bar -->
-  <div id="compare-floating-bar">
-    <span id="compare-count">0 Colleges Selected</span>
-    <div style="display: flex; gap: 10px; align-items: center;">
-      <button class="btn-cancel-compare" onclick="toggleSelectionMode(false)">Cancel</button>
-      <a href="compare.html" class="btn-go-compare" id="btn-compare-now">Compare Now</a>
-    </div>
-  </div>
-
-  <script>
-    function switchMainTab(tabName) {
-      // Update Buttons
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if(btn.innerText.toLowerCase().includes(tabName)) btn.classList.add('active');
-      });
-
-      // Update Containers
-      document.querySelectorAll('.institutions-container').forEach(cont => cont.classList.remove('active'));
-      document.getElementById(tabName + '-hub').classList.add('active');
-    }
-
-    function filterByDistrict(district) {
-      // Update Chips
-      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
-      const activeContent = document.querySelector('.institutions-container.active');
-      
-      // Find the specific chip and set active
-      event.target.classList.add('active');
-
-      const cards = activeContent.querySelectorAll('.inst-card');
-      cards.forEach(card => {
-        if (district === 'all') {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = card.dataset.district === district ? 'flex' : 'none';
-        }
-      });
-    }
-
-    let isSelectionMode = false;
-    let selectedColleges = [];
-
-    function toggleSelectionMode(active) {
-      isSelectionMode = active;
-      const cards = document.querySelectorAll('.inst-card');
-      const bar = document.getElementById('compare-floating-bar');
-      const compareBtns = document.querySelectorAll('.btn-main');
-
-      if (active) {
-        cards.forEach(card => card.classList.add('selection-mode'));
-        bar.classList.add('active');
-        compareBtns.forEach(btn => {
-           if(btn.id !== 'btn-compare-now') btn.innerText = "Select Colleges Below";
-        });
-      } else {
-        cards.forEach(card => {
-          card.classList.remove('selection-mode', 'selected');
-          const check = card.querySelector('.compare-checkbox');
-          if(check) check.classList.remove('selected');
-        });
-        selectedColleges = [];
-        updateCompareBar();
-        bar.classList.remove('active');
-         compareBtns.forEach(btn => {
-           if(btn.id !== 'btn-compare-now') {
-              btn.innerText = btn.href.includes('Colleges') ? "Compare All Colleges" : "Compare All Schools";
-           }
-        });
-      }
-    }
-
-    function toggleCollegeSelection(card, collegeName) {
-      if (!isSelectionMode) {
-        toggleSelectionMode(true);
-      }
-
-      const checkbox = card.querySelector('.compare-checkbox');
-      const index = selectedColleges.indexOf(collegeName);
-
-      if (index > -1) {
-        selectedColleges.splice(index, 1);
-        card.classList.remove('selected');
-        checkbox.classList.remove('selected');
-      } else {
-        if (selectedColleges.length >= 3) {
-          alert("You can compare up to 3 institutions at once.");
-          return;
-        }
-        selectedColleges.push(collegeName);
-        card.classList.add('selected');
-        checkbox.classList.add('selected');
-      }
-
-      updateCompareBar();
-      // Store in localStorage for compare.html
-      localStorage.setItem('selectedColleges', JSON.stringify(selectedColleges));
-    }
-
-    function updateCompareBar() {
-      const countLabel = document.getElementById('compare-count');
-      countLabel.innerText = `${selectedColleges.length} Institution(s) Selected`;
-      
-      const btn = document.getElementById('btn-compare-now');
-      if (selectedColleges.length < 2) {
-        btn.style.opacity = "0.5";
-        btn.style.pointerEvents = "none";
-      } else {
-        btn.style.opacity = "1";
-        btn.style.pointerEvents = "auto";
-      }
-    }
-
-    // Initialize Selection Overlays on all Cards
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.inst-card');
-      cards.forEach(card => {
-        const name = card.querySelector('h4').innerText;
-        
-        // Add overlay div
-        const overlay = document.createElement('div');
-        overlay.className = 'compare-overlay';
-        overlay.innerHTML = '<div class="compare-checkbox">✓</div>';
-        card.appendChild(overlay);
-
-        card.addEventListener('click', (e) => {
-          // If clicking details button, don't trigger selection
-          if (e.target.classList.contains('btn-view')) return;
-          toggleCollegeSelection(card, name);
-        });
-      });
-
-      // Hook up the main compare buttons
-      const compareAllBtns = document.querySelectorAll('.btn-main');
-      compareAllBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          toggleSelectionMode(!isSelectionMode);
-        });
-      });
-    });
-
-    function toggleMenu() {
-      document.getElementById('navMenu').classList.toggle('active');
-    }
-  </script>
   <!-- Testimonials Section -->
   <section class="testimonials">
+    <div class="section-header" style="text-align: center; grid-column: 1 / -1; margin-bottom: 40px;">
+      <h2>What Our <span>Students Say</span></h2>
+    </div>
     <div class="testimonial-card hidden" style="transition-delay: 0s;">
       <div class="stars">★★★★★</div>
-      <p>"Suvidha helped me connect with an amazing mentor from Google who guided me through my placement preparation. I
-        got my dream job at Microsoft!"</p>
+      <p>"Suvidha helped me connect with an amazing mentor from Google. I got my dream job at Microsoft!"</p>
       <div class="profile">
         <img src="https://preview.redd.it/god-level-ghibli-style-bollywood-images-v0-19j408j5x4re1.jpg?width=640&crop=smart&auto=webp&s=4a4bc064965c522e74dc1f8c0adc911ca790da8d" alt="Aaditya">
         <div>
           <h3>Aaditya Gupta</h3>
-          <span>IIT Delhi CSE '24 – Placed at Microsoft</span>
+          <span>IIT Delhi '24 – Placed at Microsoft</span>
         </div>
       </div>
     </div>
     <div class="testimonial-card hidden" style="transition-delay: 0.1s;">
       <div class="stars">★★★★★</div>
-      <p>"The college comparison tool was incredibly detailed. I could compare everything from fees to hostel
-        facilities. Made my decision so much easier!"</p>
+      <p>"The college comparison tool was incredibly detailed. Made my decision so much easier!"</p>
       <div class="profile">
         <img src="https://i.ytimg.com/vi/kXfMWv3pvTM/oardefault.jpg?sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLBRfoWo4Z3ANFnYT3kuTv5B1XTJyw" alt="Kavya">
         <div>
           <h3>Kavya Reddy</h3>
-          <span>BITS Pilani EEE '23 – Got into Dream College</span>
+          <span>BITS Pilani '23 – Got into Dream College</span>
         </div>
       </div>
     </div>
     <div class="testimonial-card hidden" style="transition-delay: 0.2s;">
       <div class="stars">★★★★★</div>
-      <p>"My mentor helped me pivot from mechanical to product management. The career guidance was spot-on and very
-        practical."</p>
+      <p>"My mentor helped me pivot from mechanical to product management. Spot-on guidance!"</p>
       <div class="profile">
         <img src="https://www.financialexpress.com/wp-content/uploads/2025/03/4_ac2c4f.jpg" alt="Siddharth">
         <div>
           <h3>Siddharth Shah</h3>
-          <span>NIT Trichy Mech '25 – Career Switch to PM</span>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card hidden" style="transition-delay: 0.3s;">
-      <div class="stars">★★★★★</div>
-      <p>"The MBA preparation guidance from an IIM alum was invaluable. From application essays to interview prep,
-        everything was covered perfectly."</p>
-      <div class="profile">
-        <img src="https://global.discourse-cdn.com/schizophrenia/uploads/default/original/4X/e/8/5/e855fd3e7c55f50b9f774ebc6f1a04dd1a215254.jpeg" alt="Ananya">
-        <div>
-          <h3>Ananya Jain</h3>
-          <span>IIM Bangalore MBA '22 – MBA at IIM Bangalore</span>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card hidden" style="transition-delay: 0.4s;">
-      <div class="stars">★★★★★</div>
-      <p>"Found my research mentor through Suvidha. Now I'm publishing papers and got accepted to Stanford for PhD.
-        Amazing platform!"</p>
-      <div class="profile">
-        <img src="https://static.getimg.ai/media/67ee9512fd022b2b3bc23d51_getimg_ai_img-kCELiB1qav3dUdV3CWFa2.webp" alt="Rahul">
-        <div>
-          <h3>Rahul Krishnan</h3>
-          <span>IIIT Hyderabad CSE '24 – PhD at Stanford</span>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card hidden" style="transition-delay: 0.5s;">
-      <div class="stars">★★★★★</div>
-      <p>"The platform's AI matching connected me with the perfect mentor for Data Science transition. Now working at
-        Flipkart as a Data Scientist!"</p>
-      <div class="profile">
-        <img src="https://ghibligenerator.net/imgs/features/2.png" alt="Pooja">
-        <div>
-          <h3>Pooja Mehta</h3>
-          <span>DTU ECE '23 – Data Scientist at Flipkart</span>
+          <span>NIT Trichy '25 – Career Switch to PM</span>
         </div>
       </div>
     </div>
@@ -1910,47 +2627,46 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-about">
-        <h3 class="logo">Suvidha</h3>
-        <p>Making Career Decisions Simple & Smart. Your personal guide for admissions and career success.</p>
+        <span class="logo">Suvidha</span>
+        <p>Expert career guidance, detailed institution comparisons, and 1-on-1 mentorship to help you build your dream career path with confidence.</p>
         <div class="socials">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+          <a href="#" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+          <a href="#" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#" title="Twitter"><img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="Twitter"></a>
         </div>
       </div>
+      
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4>Platform</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="chat.html">live chat</a></li>
-          <li><a href="#">Compare Colleges</a></li>
-          <li><a href="#">Career Guidance</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#mentors">Find Mentors</a></li>
+          <li><a href="#explore-hub">Top Colleges</a></li>
+          <li><a href="compare.html">Compare Tool</a></li>
+          <li><a href="game.html">Career Puzzle</a></li>
         </ul>
       </div>
 
       <div class="footer-support">
-        <h4>Support</h4>
+        <h4>Company</h4>
         <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="blog.html">Career Blog</a></li>
         </ul>
       </div>
+
       <div class="footer-contact">
-        <h4>Get in Touch</h4>
-        <p>📧 hello@suvidha.com</p>
-        <p>📞 +91 9876543210</p>
+        <h4>Newsletter</h4>
+        <p>Get latest career insights and admission alerts.</p>
         <div class="subscribe">
-          <input type="email" placeholder="Enter your email">
-          <button>Subscribe</button>
+          <input type="email" placeholder="your@email.com">
+          <button>Join</button>
         </div>
       </div>
     </div>
     <p class="copyright">
-      © 2024 Suvidha. All rights reserved. Made with ❤ for students.
+      &copy; 2025 Suvidha AI. Empowering student futures. Made with ❤️ for Bharat.
     </p>
   </footer>
 
@@ -2001,38 +2717,220 @@
     }, { threshold: 0.5 });
 
     statsObserver.observe(statsSection);
+
+    // Navigation and Interaction Functions
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+
+    function switchMainTab(type) {
+      const collegesHub = document.getElementById('colleges-hub');
+      const schoolsHub = document.getElementById('schools-hub');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      if (type === 'colleges') {
+        if (collegesHub) collegesHub.classList.add('active');
+        if (schoolsHub) schoolsHub.classList.remove('active');
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+      } else {
+        if (schoolsHub) schoolsHub.classList.add('active');
+        if (collegesHub) collegesHub.classList.remove('active');
+        buttons[1].classList.add('active');
+        buttons[0].classList.remove('active');
+      }
+    }
+
+    function filterByDistrict(district) {
+      const cards = document.querySelectorAll('.inst-card');
+      const chips = document.querySelectorAll('.filter-chip');
+
+      chips.forEach(chip => {
+        const chipText = chip.innerText.toLowerCase();
+        if (district === 'all') {
+          if (chipText.includes('all')) chip.classList.add('active');
+          else chip.classList.remove('active');
+        } else if (chipText.includes(district)) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+
+      cards.forEach(card => {
+        if (district === 'all') {
+          card.style.display = 'flex';
+        } else {
+          if (card.getAttribute('data-district') === district) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    let selectedInstitutions = [];
+    function toggleSelectionMode(show) {
+      const cards = document.querySelectorAll('.inst-card');
+      const floatingBar = document.getElementById('compare-floating-bar');
+      
+      if (!show) {
+        selectedInstitutions = [];
+        if (document.getElementById('compare-count')) {
+          document.getElementById('compare-count').textContent = '0';
+        }
+        if (floatingBar) floatingBar.classList.remove('active');
+        cards.forEach(card => {
+          card.classList.remove('selection-mode', 'selected');
+          const cb = card.querySelector('.compare-checkbox');
+          if (cb) cb.classList.remove('selected');
+        });
+        return;
+      }
+
+      cards.forEach(card => {
+        card.classList.add('selection-mode');
+        if (!card.querySelector('.compare-overlay')) {
+          const overlay = document.createElement('div');
+          overlay.className = 'compare-overlay';
+          overlay.innerHTML = '<div class="compare-checkbox" onclick="toggleSelect(event, this)">✓</div>';
+          card.appendChild(overlay);
+        }
+      });
+    }
+
+    function toggleSelect(event, checkbox) {
+      event.stopPropagation();
+      const card = checkbox.closest('.inst-card');
+      card.classList.toggle('selected');
+      checkbox.classList.toggle('selected');
+      
+      const isSelected = card.classList.contains('selected');
+      const instName = card.querySelector('h4').textContent;
+      
+      if (isSelected) {
+        selectedInstitutions.push(instName);
+      } else {
+        selectedInstitutions = selectedInstitutions.filter(n => n !== instName);
+      }
+      
+      const floatingBar = document.getElementById('compare-floating-bar');
+      if (document.getElementById('compare-count')) {
+        document.getElementById('compare-count').textContent = selectedInstitutions.length;
+      }
+      
+      if (floatingBar) {
+        if (selectedInstitutions.length > 0) {
+          floatingBar.classList.add('active');
+        } else {
+          floatingBar.classList.remove('active');
+        }
+      }
+      
+      // Save to localStorage for compare.html
+      localStorage.setItem('selectedColleges', JSON.stringify(selectedInstitutions));
+    }
   </script>
+
 
   <!-- Google Translate -->
   <script src="translate.js"></script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
-<!-- tawk to -->
- <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69b4f058406cbe1c37cf1ef8/1jjlclncf';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!-- Google Translate Scripts -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,hi,doi,ks,gu,ta,te,bn,ml,mr,pa,ur', // Languages supported
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- tawk to -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/69b4f058406cbe1c37cf1ef8/1jjlclncf';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!-- Google Translate Scripts -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,doi,ks,gu,ta,te,bn,ml,mr,pa,ur', // Languages supported
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+  <!-- School Details Modal -->
+  <div id="details-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-close" onclick="closeModal()">×</div>
+      <div class="modal-header">
+        <img id="modal-img" src="" alt="Institution" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-name" style="font-size: 2rem; margin-bottom: 10px;">School Name</h2>
+        <p id="modal-desc" style="color: #64748b; margin-bottom: 20px;">Detailed information provided by Suvidha.</p>
+        
+        <div class="modal-detail-grid">
+          <div class="detail-item">
+            <h5>Established</h5>
+            <p id="modal-est">-</p>
+          </div>
+          <div class="detail-item">
+            <h5>Affiliation</h5>
+            <p id="modal-affil">-</p>
+          </div>
+          <div class="detail-item">
+            <h5>Contact</h5>
+            <p id="modal-contact">-</p>
+          </div>
+          <div class="detail-item">
+            <h5>Email</h5>
+            <p id="modal-email">-</p>
+          </div>
+          <div class="detail-item">
+            <h5>Website</h5>
+            <p id="modal-web">-</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; gap: 15px;">
+          <a href="#" class="btn-main" style="flex: 1; text-align: center; border-radius: 12px; padding: 15px;">Apply Now</a>
+          <button class="btn-session" style="flex: 1; border-radius: 12px;">Get Virtual Tour</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showDetails(schoolData) {
+      const modal = document.getElementById('details-modal');
+      document.getElementById('modal-name').textContent = schoolData.name;
+      document.getElementById('modal-img').src = schoolData.img;
+      document.getElementById('modal-est').textContent = schoolData.est || 'N/A';
+      document.getElementById('modal-affil').textContent = schoolData.affil || 'N/A';
+      document.getElementById('modal-contact').textContent = schoolData.contact || 'N/A';
+      document.getElementById('modal-email').textContent = schoolData.email || 'N/A';
+      document.getElementById('modal-web').textContent = schoolData.web || 'N/A';
+      document.getElementById('modal-desc').textContent = schoolData.desc || 'Quality education focusing on holistic development and academic excellence.';
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('details-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
 </body>
 
 </html>
