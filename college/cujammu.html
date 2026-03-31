@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central University of Jammu - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; }
+    .container { max-width: 1100px; background-color: #fff; margin: auto; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+    .header { display: flex; align-items: center; padding: 20px; background: linear-gradient(135deg, #0047ab, #00bfa6); color: #fff; }
+    .header img { width: 60px; height: 60px; border-radius: 8px; margin-right: 20px; }
+    .header h1 { font-size: 24px; font-weight: 700; }
+    .banner { height: 200px; background-image: url('https://images.unsplash.com/photo-1592280771190-3e2e4d571952?fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
+    .tabs { display: flex; justify-content: space-around; background-color: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+    .tabs div { padding: 12px 20px; cursor: pointer; font-weight: 600; color: #374151; transition: 0.3s; }
+    .tabs div.active { color: #00bfa6; border-bottom: 3px solid #00bfa6; }
+    .content { padding: 30px; display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .content.active-section { display: grid; }
+    .card { background-color: #f9fafb; padding: 20px; border-radius: 12px; }
+    .card ul { list-style: none; }
+    .card ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    .card ul li::before { content: '✓'; position: absolute; left: 0; color: #00bfa6; font-weight: bold; }
+    .actions { padding: 20px; text-align: center; }
+    .apply-btn { background: #00bfa6; color: #fff; padding: 14px 28px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://share.google/images/HYUsMyZao9HZyHcBZ" alt="CUJ Logo">
+      <div>
+        <h1>Central University of Jammu (CUJ)</h1>
+        <p>Samba, Jammu & Kashmir • Established 2011</p>
+      </div>
+    </div>
+    <div class="banner"></div>
+    <div class="tabs">
+      <div class="active">Overview</div>
+      <div>Academics</div>
+      <div>Infrastructure</div>
+      <div>Admissions</div>
+    </div>
+    <div class="content active-section" id="overview-section">
+      <div class="card">
+        <h3>🎓 Establishment</h3>
+        <p>Founded on <strong>August 8, 2011</strong>, under the Central Universities Act, 2009.</p>
+        <p><strong>Campus:</strong> Sprawling 610-acre campus in Samba district.</p>
+      </div>
+      <div class="card">
+        <h3>✅ Accreditation</h3>
+        <p>Recognized by <strong>UGC</strong>.</p>
+        <p><strong>NAAC 'B++' Grade</strong> accredited institution.</p>
+      </div>
+    </div>
+    <div class="content" id="academics-section">
+      <div class="card">
+        <h3>📘 Multidisciplinary Programs</h3>
+        <ul>
+          <li><strong>Engineering:</strong> B.Tech, M.Tech in CSE and ECE.</li>
+          <li><strong>Business Studies:</strong> MBA and Management courses.</li>
+          <li><strong>Life Sciences:</strong> Integrated B.Sc. + M.Sc. courses.</li>
+          <li><strong>Humanities:</strong> Social Sciences, Languages.</li>
+          <li><strong>Others:</strong> Mass Communication, Security Studies.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💰 Fees Structure</h3>
+        <p><strong>UG Programs:</strong> ~₹20,000 (B.Voc) to higher for professional courses.</p>
+        <p><strong>PG Programs:</strong> Economical fees, starting from ~₹19,560 for MA.</p>
+      </div>
+    </div>
+    <div class="content" id="infrastructure-section">
+      <div class="card" style="grid-column: span 2;">
+        <h3>🏢 Modern Facilities</h3>
+        <ul>
+          <li>State-of-the-art specialized laboratories.</li>
+          <li><strong>Central Library:</strong> Fully automated with RFID system.</li>
+          <li>Vibrant student services, workshops, and cultural events.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content" id="admissions-section">
+      <div class="card">
+        <h3>📅 Admissions</h3>
+        <p>Primary selection mode: <strong>CUET (Central Universities Common Entrance Test)</strong> for UG.</p>
+        <p>Entrance exams for PG and Doctoral programs as per guidelines.</p>
+      </div>
+      <div class="card">
+        <h3>📍 Location</h3>
+        <p>Rahya – Suchani (Bagla), Samba District, Jammu & Kashmir - 181143.</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="apply-btn" onclick="openApplicationForm()">Apply Now</button>
+    </div>
+  </div>
+  <div id="applyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:40px; border-radius:24px; width:100%; max-width:500px;">
+      <h2>Application for CUJ</h2>
+      <form onsubmit="event.preventDefault(); window.location.href='apply_success.html';">
+        <input type="text" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ddd;">
+        <input type="email" placeholder="Your Email" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ddd;">
+        <button type="submit" class="apply-btn" style="width:100%;">Submit Application</button>
+        <button type="button" onclick="document.getElementById('applyModal').style.display='none'" style="margin-top:10px; width:100%; border:none; background:#eee; padding:10px; border-radius:8px;">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function openApplicationForm() { document.getElementById('applyModal').style.display = 'flex'; }
+    const tabs = document.querySelectorAll(".tabs div");
+    const sections = [
+      document.getElementById("overview-section"),
+      document.getElementById("academics-section"),
+      document.getElementById("infrastructure-section"),
+      document.getElementById("admissions-section"),
+    ];
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        sections.forEach(s => s.classList.remove("active-section"));
+        sections[index].classList.add("active-section");
+      });
+    });
+  </script>
+</body>
+</html>

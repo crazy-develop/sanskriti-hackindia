@@ -343,109 +343,132 @@
     /* ===== College Cards Grid ===== */
     #college-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 30px 20px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
+      padding: 40px 20px;
+      max-width: 1250px;
+      margin: auto;
     }
 
     .college-card {
       background: #fff;
-      border-radius: 15px;
+      border-radius: 24px;
       width: 100%;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       overflow: hidden;
       position: relative;
-      transition: 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #f0f4f8;
     }
 
     .college-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: #00bfa6;
     }
 
     .college-img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .college-card:hover .college-img {
+      transform: scale(1.05);
     }
 
     .college-body {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .college-stats {
+      padding: 25px;
+      text-align: left;
+      flex-grow: 1;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
+      flex-direction: column;
     }
 
-    .college-stat {
-      background: #f1f5f9;
-      border-radius: 8px;
-      padding: 8px 10px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-align: center;
-      margin: 5px;
-      flex: 1 1 45%;
+    .college-body h3 {
+      font-size: 1.4rem;
+      color: #1e293b;
+      margin-bottom: 15px;
+      font-weight: 700;
     }
 
-    .college-meta {
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .data-item {
+      background: #f8fafc;
+      padding: 10px;
+      border-radius: 12px;
+      border-left: 3px solid #00bfa6;
+    }
+
+    .data-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .data-value {
       font-size: 0.85rem;
-      color: #666;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
+      color: #334155;
+      font-weight: 600;
     }
 
     .tag-popular {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      background: #00bfa6;
+      top: 15px;
+      left: 15px;
+      background: linear-gradient(135deg, #00bfa6, #009e8c);
       color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 5px 10px;
-      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 191, 166, 0.3);
     }
 
     .btn-details {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #0047ab;
-      color: #fff;
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #f1f5f9;
+      color: #1e293b;
+      text-align: center;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: 0.3s ease;
-      margin-top: 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.3s;
+      margin-top: auto;
     }
 
     .btn-details:hover {
-      background: #003080;
-    }
-
-    .btn-container {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .compare-btn {
-      padding: 12px 25px;
       background: #00bfa6;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
+      color: white;
     }
 
-    .compare-btn:hover {
-      background: #009e8c;
+    .btn-container { text-align: center; padding: 40px; }
+    .compare-btn {
+      padding: 15px 35px;
+      background: #1e293b;
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
+    .compare-btn:hover { background: #000; transform: scale(1.05); }
 
     /* ===== Mentor Section ===== */
     .mentor-section {
@@ -884,6 +907,7 @@
           <li><a href="mentors.html">Mentors</a></li>
           <li><a href="career.html">Career</a></li>
           <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="game.html">Career Puzzle 🧩</a></li>
           <li><a href="login.html" class="login-btn">Login</a></li>
           <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
         </ul>
@@ -961,6 +985,13 @@
     </div>
   </div>
 
+  <!-- New Game Promotion Section -->
+  <section style="background: linear-gradient(135deg, #047857, #0891b2); padding: 60px 20px; text-align: center; color: white;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Confused About Your Path? 🧩</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Try our New Interactive Career Puzzle to find your ideal mentorship field!</p>
+    <a href="game.html" class="btn btn-primary" style="background: white; color: #047857; padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Play Career Puzzle Now →</a>
+  </section>
+
   <!-- College Section -->
   <section class="comparison-heading">
     <section class="college-section">
@@ -970,10 +1001,251 @@
     </section>
 
     <div id="college-wrapper">
+      <!-- JAMMU DISTRICT -->
+      <div style="grid-column: 1 / -1; margin-top: 40px; margin-bottom: 20px;">
+        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Jammu District Top Institutions 🏔️</h3>
+      </div>
+      
+      <!-- IIT Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">Premier Institute</span>
+        <img src="https://share.google/images/JDmCy7MCwh4K3zaxU" class="college-img" alt="IIT Jammu" />
+        <div class="college-body">
+          <h3>IIT Jammu</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">2016</div></div>
+            <div class="data-item"><div class="data-label">NIRF RANK</div><div class="data-value">62nd (Eng)</div></div>
+            <div class="data-item"><div class="data-label">CAMPUS</div><div class="data-value">400 Acres</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">JEE Advanced</div></div>
+          </div>
+          <a href="college/iitjammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- SMVDU Katra -->
+      <div class="college-card">
+        <span class="tag-popular">Residential Technical</span>
+        <img src="https://share.google/images/mhQ2NRTpDTnZKv2Xc" class="college-img" alt="SMVDU Katra" />
+        <div class="college-body">
+          <h3>Shri Mata Vaishno Devi Univ.</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1999</div></div>
+            <div class="data-item"><div class="data-label">FEES (B.TECH)</div><div class="data-value">₹2.29L approx.</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">JEE Main, CUET</div></div>
+            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Katra (Reasi)</div></div>
+          </div>
+          <a href="college/smvdukatra.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- University of Jammu -->
+      <div class="college-card">
+        <img src="univ_jammu_building_1774956817912.png" class="college-img" alt="University of Jammu" />
+        <div class="college-body">
+          <h3>University of Jammu</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.8</div>
+            <div class="college-stat">Type: Public University</div>
+          </div>
+          <p class="college-meta">City: Jammu</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- The Business School, University of Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">Award Winning</span>
+        <img src="https://share.google/images/PtQRXcWyc5kHrTYO3" class="college-img" alt="TBS Jammu" />
+        <div class="college-body">
+          <h3>The Business School (TBS)</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1987</div></div>
+            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹78,000</div></div>
+            <div class="data-item"><div class="data-label">ACCREDITATION</div><div class="data-value">AICTE, UGC</div></div>
+            <div class="data-item"><div class="data-label">CONTACT</div><div class="data-value">0191-2430023</div></div>
+          </div>
+          <a href="college/tbsjammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- GMC Jammu -->
+      <div class="college-card">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" class="college-img" alt="GMC Jammu" />
+        <div class="college-body">
+          <h3>Government Medical College (GMC)</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.7</div>
+            <div class="college-stat">Type: Medical</div>
+          </div>
+          <p class="college-meta">City: Jammu</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- MIET Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">NAAC 'A' Grade</span>
+        <img src="https://share.google/images/eyUAJtjEd6Z9GoSwo" class="college-img" alt="MIET Jammu" />
+        <div class="college-body">
+          <h3>MIET Jammu</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1996</div></div>
+            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹1.1L - 2.3L</div></div>
+            <div class="data-item"><div class="data-label">RATING</div><div class="data-value">⭐ 4.6</div></div>
+            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Kot Bhalwal</div></div>
+          </div>
+          <a href="college/mietjammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- CUJ Samba -->
+      <div class="college-card">
+        <span class="tag-popular">Central Govt.</span>
+        <img src="https://share.google/images/HYUsMyZao9HZyHcBZ" class="college-img" alt="CUJ Samba" />
+        <div class="college-body">
+          <h3>Central University of Jammu</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">2011</div></div>
+            <div class="data-item"><div class="data-label">FEES (UG)</div><div class="data-value">₹19k - 20k+</div></div>
+            <div class="data-item"><div class="data-label">CAMPUS</div><div class="data-value">610 Acres</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">CUET</div></div>
+          </div>
+          <a href="college/cujammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- BEE ENN Nursing Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">Nursing Excellence</span>
+        <img src="https://share.google/images/9MuqhVlwMIbF5OWKp" class="college-img" alt="BEE ENN Nursing" />
+        <div class="college-body">
+          <h3>BEE ENN College of Nursing</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1998</div></div>
+            <div class="data-item"><div class="data-label">FEES (B.SC)</div><div class="data-value">₹3,00,000</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">10+2 PCB (45%)</div></div>
+            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Chak Bhalwal</div></div>
+          </div>
+          <a href="college/beennnursing.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- GCW Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">Women's Education</span>
+        <img src="https://share.google/images/RwSe1umvuouCwjQcQ" class="college-img" alt="GCW Jammu" />
+        <div class="college-body">
+          <h3>Govt. College for Women, Jammu</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">LOCATION</div><div class="data-value">Gandhinagar, Jammu</div></div>
+            <div class="data-item"><div class="data-label">FEES</div><div class="data-value">₹28k - ₹32k</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">Merit-based (10+2)</div></div>
+            <div class="data-item"><div class="data-label">CONTACT</div><div class="data-value">0191-2435158</div></div>
+          </div>
+          <a href="college/gcwjammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- Life Sciences Jammu -->
+      <div class="college-card">
+        <span class="tag-popular">Scientific Research</span>
+        <img src="https://images.unsplash.com/photo-1540910419892-da68999a4550" class="college-img" alt="Life Sciences Jammu" />
+        <div class="college-body">
+          <h3>Faculty of Life Sciences, Jammu Univ</h3>
+          <div class="data-grid">
+            <div class="data-item"><div class="data-label">ESTABLISHED</div><div class="data-value">1971</div></div>
+            <div class="data-item"><div class="data-label">FEES (M.SC)</div><div class="data-value">₹3.6L - ₹4.8L</div></div>
+            <div class="data-item"><div class="data-label">ADMISSION</div><div class="data-value">CUET-PG</div></div>
+            <div class="data-item"><div class="data-label">GRADE</div><div class="data-value">NAAC 'A+'</div></div>
+          </div>
+          <a href="college/lifesciencesjammu.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- Jodhamal Public School -->
+      <div class="college-card">
+        <span class="tag-popular">Top Rated</span>
+        <img src="modern_school_jammu_building_1774956861450.png" class="college-img" alt="Jodhamal Public School" />
+        <div class="college-body">
+          <h3>Jodhamal Public School</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.8</div>
+            <div class="college-stat">Type: School</div>
+          </div>
+          <p class="college-meta">City: Jammu</p>
+          <a href="college/collegekr.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- RAJOURI & POONCH DISTRICTS -->
+      <div style="grid-column: 1 / -1; margin-top: 60px; margin-bottom: 20px;">
+        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Rajouri & Poonch Institutions 🛣️</h3>
+      </div>
+
+      <!-- BGSBU Rajouri -->
+      <div class="college-card">
+        <img src="bgsbu_rajouri_campus_1774956839858.png" class="college-img" alt="BGSBU Rajouri" />
+        <div class="college-body">
+          <h3>Baba Ghulam Shah Badshah University</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.6</div>
+            <div class="college-stat">Type: University</div>
+          </div>
+          <p class="college-meta">City: Rajouri</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- GPG College Rajouri -->
+      <div class="college-card">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756edd811" class="college-img" alt="GPG College Rajouri" />
+        <div class="college-body">
+          <h3>Government Post Graduate College</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.5</div>
+            <div class="college-stat">Type: Degree College</div>
+          </div>
+          <p class="college-meta">City: Rajouri</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- GMC Rajouri -->
+      <div class="college-card">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2" class="college-img" alt="GMC Rajouri" />
+        <div class="college-body">
+          <h3>Government Medical College</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.6</div>
+            <div class="college-stat">Type: Medical</div>
+          </div>
+          <p class="college-meta">City: Rajouri</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- GDC Poonch -->
+      <div class="college-card">
+        <img src="https://images.unsplash.com/photo-1523050335456-adabbf7ceb97" class="college-img" alt="GDC Poonch" />
+        <div class="college-body">
+          <h3>Government Degree College</h3>
+          <div class="college-stats">
+            <div class="college-stat">Rating: 4.4</div>
+            <div class="college-stat">Type: Degree College</div>
+          </div>
+          <p class="college-meta">City: Poonch</p>
+          <a href="college/collegedata.html" class="btn-details">View Details</a>
+        </div>
+      </div>
+
+      <!-- EXISTING POPULAR COLLEGES -->
+      <div style="grid-column: 1 / -1; margin-top: 60px; margin-bottom: 20px;">
+        <h3 style="font-size: 2rem; color: #1e293b; border-bottom: 3px solid #00bfa6; display: inline-block;">Global Top Institutions 🌎</h3>
+      </div>
+
       <div class="college-card">
         <span class="tag-popular">Popular</span>
-        <img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg " class="college-img"
-          alt="College 1" />
+        <img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg" class="college-img" alt="Sanskriti University" />
         <div class="college-body">
           <h3>Sanskriti University</h3>
           <div class="college-stats">
@@ -986,7 +1258,7 @@
       </div>
 
       <div class="college-card">
-        <img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="college-img" alt="College 2" />
+        <img src="https://i.ytimg.com/vi/xS7psYIIadM/maxresdefault.jpg" class="college-img" alt="K.R girls inter College" />
         <div class="college-body">
           <h3>K.R girls inter College</h3>
           <div class="college-stats">
@@ -999,9 +1271,7 @@
       </div>
 
       <div class="college-card">
-        <img
-          src="https://content.jdmagicbox.com/v2/comp/chitradurga/y1/9999p8194.8194.220612230402.h4y1/catalogue/jawahar-navodaya-vidyalaya-uduvally-chitradurga-boarding-schools-elyjpfvk3x.jpg"
-          class="college-img" alt="College 3" />
+        <img src="https://content.jdmagicbox.com/v2/comp/chitradurga/y1/9999p8194.8194.220612230402.h4y1/catalogue/jawahar-navodaya-vidyalaya-uduvally-chitradurga-boarding-schools-elyjpfvk3x.jpg" class="college-img" alt="JNV" />
         <div class="college-body">
           <h3>Jawahar Navodaya Vidyalaya</h3>
           <div class="college-stats">
