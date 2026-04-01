@@ -93,6 +93,37 @@
       color: #00bfa6;
     }
 
+    .profile-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 20px;
+      padding: 5px 15px;
+      background: #f1f5f9;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .profile-nav:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    .profile-nav img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .profile-nav span {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+
     .menu-icon {
       display: none;
       font-size: 2rem;
@@ -1335,10 +1366,14 @@
           <li><a href="game.html">Career Puzzle 🧩</a></li>
           <li><a href="login.html" class="login-btn">Login</a></li>
           <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
-        </ul>
+          </ul>
+          <a href="#" class="profile-nav">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
+            <span>My Profile</span>
+          </a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Hero Section -->
   <section class="landing-wrapper">

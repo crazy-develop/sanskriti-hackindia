@@ -80,6 +80,37 @@
       color: var(--primary);
     }
 
+    .profile-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 20px;
+      padding: 5px 15px;
+      background: #f1f5f9;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .profile-nav:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    .profile-nav img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .profile-nav span {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+
     /* Hero Section */
     .mentor-hero {
       text-align: center;
@@ -439,6 +470,10 @@
         <li><a href="jobs.html">Opportunities</a></li>
         <li><a href="solver.html">AI Solver</a></li>
       </ul>
+      <a href="#" class="profile-nav">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
+        <span>My Profile</span>
+      </a>
     </div>
   </nav>
 
@@ -509,7 +544,7 @@
   </div>
 
   <footer>
-    <div class="logo" style="margin-bottom: 20px; background: white; -webkit-background-clip: text;">Suvidha</div>
+    <div class="logo" style="margin-bottom: 20px; background: white; -webkit-background-clip: text; background-clip: text;">Suvidha</div>
     <p>&copy; 2025 Suvidha Career Compass. Empowering Bharat's Students.</p>
     <div class="footer-links">
       <a href="index.html">Platform Home</a>
