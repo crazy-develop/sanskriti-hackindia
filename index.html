@@ -890,8 +890,15 @@
     }
 
     @keyframes modalSlide {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     .modal-header {
@@ -946,398 +953,403 @@
       font-weight: 600;
     }
 
-      .browse-container {
-        text-align: center;
-        padding: 20px;
-      }
+    .browse-container {
+      text-align: center;
+      padding: 20px;
+    }
 
-      .btn-browse {
-        padding: 12px 25px;
-        background: #00bfa6;
-        color: #fff;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s ease;
-      }
+    .btn-browse {
+      padding: 12px 25px;
+      background: #00bfa6;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
 
-      .btn-browse:hover {
-        background: #009e8c;
-      }
+    .btn-browse:hover {
+      background: #009e8c;
+    }
 
-      /* ===== Responsive Design ===== */
-      @media (max-width: 992px) {
-        .landing-wrapper {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .intro-text h1 {
-          font-size: 2.2rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          background: white;
-          position: absolute;
-          top: 60px;
-          right: 20px;
-          width: 200px;
-          padding: 15px;
-          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-          border-radius: 8px;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .menu-icon {
-          display: block;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .cards {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      body {
-        font-family: "Segoe UI", sans-serif;
-        background: #f7f9fc;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: #333;
-      }
-
-      /* Testimonials Section Upgrade */
-      .testimonials {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-        padding: 100px 20px;
-        max-width: 1280px;
-        margin: auto;
-        background: #f8fafc;
-      }
-
-      .testimonial-card {
-        background: #fff;
-        border-radius: 24px;
-        padding: 35px;
-        position: relative;
-        border: 1px solid #e2e8f0;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        display: flex;
+    /* ===== Responsive Design ===== */
+    @media (max-width: 992px) {
+      .landing-wrapper {
         flex-direction: column;
-        justify-content: space-between;
-        text-align: left; /* Align text to left */
-      }
-
-      .testimonial-card::before {
-        content: '"';
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 80px;
-        color: #f1f5f9;
-        font-family: serif;
-        line-height: 1;
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-        border-color: #00bfa6;
-      }
-
-      .stars {
-        color: #fbbf24;
-        font-size: 16px;
-        margin-bottom: 20px;
-        display: flex;
-        gap: 4px;
-      }
-
-      .testimonial-card p {
-        font-size: 16px;
-        color: #475569;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        font-style: italic;
-        position: relative;
-        z-index: 1;
-      }
-
-      .profile {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        border-top: 1px solid #f1f5f9;
-        padding-top: 20px;
-      }
-
-      .profile img {
-        width: 55px !important; /* Fixed size */
-        height: 55px !important; /* Fixed size */
-        min-width: 55px; /* Prevent shrinking */
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #fff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
-
-      .profile h3 {
-        font-size: 17px;
-        font-weight: 700;
-        color: #1e293b;
-        margin: 0;
-      }
-
-      .profile span {
-        font-size: 13px;
-        color: #64748b;
-        font-weight: 500;
-        display: block;
-      }
-
-      /* Animation states */
-      .hidden {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      .show {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 0.6s ease;
-      }
-
-      /* Stats section */
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-        background: #f0f6f7;
-        padding: 80px 20px; /* Increased padding */
         text-align: center;
       }
 
-      .stats .stat h2 {
-        font-size: 2.5rem;
-        margin: 0;
-        color: #16a085;
+      .intro-text h1 {
+        font-size: 2.2rem;
       }
+    }
 
-      .stats .stat p {
-        margin: 5px 0 0;
-        color: #333;
-        font-weight: 500;
-      }
-
-      /* Footer */
-      .footer {
-        background: #0f172a;
-        color: #f8fafc;
-        padding: 80px 20px 40px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .footer::before {
-        content: '';
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(0, 191, 166, 0.3), transparent);
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
       }
 
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* Testimonials Section Upgrade */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 100px 20px;
+      max-width: 1280px;
+      margin: auto;
+      background: #f8fafc;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 35px;
+      position: relative;
+      border: 1px solid #e2e8f0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      /* Align text to left */
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 80px;
+      color: #f1f5f9;
+      font-family: serif;
+      line-height: 1;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border-color: #00bfa6;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .testimonial-card p {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 20px;
+    }
+
+    .profile img {
+      width: 55px !important;
+      /* Fixed size */
+      height: 55px !important;
+      /* Fixed size */
+      min-width: 55px;
+      /* Prevent shrinking */
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .profile span {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+      display: block;
+    }
+
+    /* Animation states */
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    /* Stats section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      background: #f0f6f7;
+      padding: 80px 20px;
+      /* Increased padding */
+      text-align: center;
+    }
+
+    .stats .stat h2 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #16a085;
+    }
+
+    .stats .stat p {
+      margin: 5px 0 0;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 80px 20px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 191, 166, 0.3), transparent);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    @media (max-width: 992px) {
       .footer-container {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-        gap: 60px;
-        max-width: 1200px;
-        margin: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
       }
+    }
 
-      @media (max-width: 992px) {
-        .footer-container {
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-        }
+    @media (max-width: 576px) {
+      .footer-container {
+        grid-template-columns: 1fr;
       }
+    }
 
-      @media (max-width: 576px) {
-        .footer-container {
-          grid-template-columns: 1fr;
-        }
-      }
+    .footer-about .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #00bfa6;
+      margin-bottom: 20px;
+      display: block;
+    }
 
-      .footer-about .logo {
-        font-size: 32px;
-        font-weight: 800;
-        color: #00bfa6;
-        margin-bottom: 20px;
-        display: block;
-      }
+    .footer-about p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
 
-      .footer-about p {
-        font-size: 15px;
-        line-height: 1.7;
-        color: #94a3b8;
-        margin-bottom: 25px;
-      }
+    .footer-about .socials {
+      display: flex;
+      gap: 15px;
+    }
 
-      .footer-about .socials {
-        display: flex;
-        gap: 15px;
-      }
+    .footer-about .socials a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-      .footer-about .socials a {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.05);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
+    .footer-about .socials a:hover {
+      background: #00bfa6;
+      transform: translateY(-5px);
+      border-color: #00bfa6;
+    }
 
-      .footer-about .socials a:hover {
-        background: #00bfa6;
-        transform: translateY(-5px);
-        border-color: #00bfa6;
-      }
+    .footer-about .socials a img {
+      width: 20px;
+      filter: invert(1);
+    }
 
-      .footer-about .socials a img {
-        width: 20px;
-        filter: invert(1);
-      }
+    .footer-links h4,
+    .footer-support h4,
+    .footer-contact h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #fff;
+      position: relative;
+    }
 
-      .footer-links h4,
-      .footer-support h4,
-      .footer-contact h4 {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 25px;
-        color: #fff;
-        position: relative;
-      }
+    .footer-links h4::after,
+    .footer-support h4::after,
+    .footer-contact h4::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: #00bfa6;
+    }
 
-      .footer-links h4::after,
-      .footer-support h4::after,
-      .footer-contact h4::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 30px;
-        height: 2px;
-        background: #00bfa6;
-      }
+    .footer-links ul,
+    .footer-support ul {
+      list-style: none;
+      padding: 0;
+    }
 
-      .footer-links ul,
-      .footer-support ul {
-        list-style: none;
-        padding: 0;
-      }
+    .footer-links ul li,
+    .footer-support ul li {
+      margin-bottom: 12px;
+    }
 
-      .footer-links ul li,
-      .footer-support ul li {
-        margin-bottom: 12px;
-      }
+    .footer-links ul li a,
+    .footer-support ul li a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
 
-      .footer-links ul li a,
-      .footer-support ul li a {
-        color: #94a3b8;
-        text-decoration: none;
-        font-size: 15px;
-        transition: all 0.3s ease;
-        display: inline-block;
-      }
+    .footer-links ul li a:hover,
+    .footer-support ul li a:hover {
+      color: #00bfa6;
+      transform: translateX(5px);
+    }
 
-      .footer-links ul li a:hover,
-      .footer-support ul li a:hover {
-        color: #00bfa6;
-        transform: translateX(5px);
-      }
+    .footer-contact p {
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      .footer-contact p {
-        margin-bottom: 15px;
-        font-size: 15px;
-        color: #94a3b8;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+    .subscribe {
+      display: flex;
+      margin-top: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
 
-      .subscribe {
-        display: flex;
-        margin-top: 25px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        padding: 5px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-      }
+    .subscribe:focus-within {
+      border-color: #00bfa6;
+      box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.1);
+    }
 
-      .subscribe:focus-within {
-        border-color: #00bfa6;
-        box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.1);
-      }
+    .subscribe input {
+      flex: 1;
+      padding: 12px 15px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+    }
 
-      .subscribe input {
-        flex: 1;
-        padding: 12px 15px;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: #fff;
-        font-size: 14px;
-      }
+    .subscribe button {
+      background: #00bfa6;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
 
-      .subscribe button {
-        background: #00bfa6;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: 700;
-        transition: all 0.3s ease;
-      }
+    .subscribe button:hover {
+      background: #009e8c;
+      transform: scale(0.98);
+    }
 
-      .subscribe button:hover {
-        background: #009e8c;
-        transform: scale(0.98);
-      }
+    .copyright {
+      text-align: center;
+      padding-top: 50px;
+      margin-top: 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #64748b;
+      font-size: 14px;
+    }
 
-      .copyright {
-        text-align: center;
-        padding-top: 50px;
-        margin-top: 50px;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        color: #64748b;
-        font-size: 14px;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
-
-      .btn {
-        text-decoration: none;
-      }
+    .btn {
+      text-decoration: none;
+    }
   </style>
 
 </head>
@@ -1366,31 +1378,31 @@
           <li><a href="game.html">Career Puzzle 🧩</a></li>
           <li id="nav-login"><a href="login.html" class="login-btn">Login</a></li>
           <li id="nav-signup"><a href="signup.html" class="signup-btn">Sign Up</a></li>
-          </ul>
-          <a href="dashboard.html" class="profile-nav" id="nav-profile" style="display: none;">
-            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
-            <span id="nav-username">My Profile</span>
-          </a>
-        </div>
+        </ul>
+        <a href="dashboard.html" class="profile-nav" id="nav-profile" style="display: none;">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
+          <span id="nav-username">My Profile</span>
+        </a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <script>
-      function checkLoginStatus() {
-        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-        const email = localStorage.getItem("userEmail");
-        
-        if (isLoggedIn) {
-          document.getElementById("nav-login").style.display = "none";
-          document.getElementById("nav-signup").style.display = "none";
-          document.getElementById("nav-profile").style.display = "flex";
-          if (email) {
-            document.getElementById("nav-username").textContent = email.split('@')[0];
-          }
+  <script>
+    function checkLoginStatus() {
+      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+      const email = localStorage.getItem("userEmail");
+
+      if (isLoggedIn) {
+        document.getElementById("nav-login").style.display = "none";
+        document.getElementById("nav-signup").style.display = "none";
+        document.getElementById("nav-profile").style.display = "flex";
+        if (email) {
+          document.getElementById("nav-username").textContent = email.split('@')[0];
         }
       }
-      window.onload = checkLoginStatus;
-    </script>
+    }
+    window.onload = checkLoginStatus;
+  </script>
 
   <!-- Hero Section -->
   <section class="landing-wrapper">
@@ -1500,8 +1512,8 @@
         <!-- IIT Jammu -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier Institute</span>
-          <div class="inst-img-wrapper"><img src="college images/Iit jammu.jpg.jpeg" class="inst-img"
-              alt="IIT Jammu" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Iit jammu.jpg.jpeg" class="inst-img" alt="IIT Jammu" />
+          </div>
           <div class="inst-body">
             <h4>IIT Jammu</h4>
             <div class="info-grid">
@@ -1561,26 +1573,55 @@
           <div class="inst-img-wrapper"><img src="college images/University of jammu .jpg.jpeg" class="inst-img"
               alt="Jammu Univ" /></div>
           <div class="inst-body">
-            <h4>University of Jammu</h4>
+            <h4>University of Jammu (TBS)</h4>
             <div class="info-grid">
               <div class="info-box">
-                <div class="info-label">RATING</div>
-                <div class="info-value">⭐ 4.8</div>
+                <div class="info-label">ESTABLISHED</div>
+                <div class="info-value">1987</div>
               </div>
               <div class="info-box">
-                <div class="info-label">TYPE</div>
-                <div class="info-value">Public Univ.</div>
-              </div>
-              <div class="info-box">
-                <div class="info-label">LOC</div>
-                <div class="info-value">Jammu</div>
+                <div class="info-label">TUITION FEE</div>
+                <div class="info-value">₹78k</div>
               </div>
               <div class="info-box">
                 <div class="info-label">ACCR</div>
-                <div class="info-value">A+</div>
+                <div class="info-value">NAAC A+</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">ADMISSIONS</div>
+                <div class="info-value">CAT/MAT</div>
               </div>
             </div>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/jammu_univ.html" class="btn-view">View Profile Details</a>
+          </div>
+        </div>
+
+        <!-- CU Jammu -->
+        <div class="inst-card" data-district="jammu">
+          <span class="inst-badge" style="background: #059669;">NAAC B++</span>
+          <div class="inst-img-wrapper"><img src="college images/Central university of jammu.jpg.jpeg"
+              class="inst-img" alt="CUJ" /></div>
+          <div class="inst-body">
+            <h4>Central University of Jammu</h4>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-label">EST</div>
+                <div class="info-value">2011</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEES</div>
+                <div class="info-value">₹20k</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">CAMPUS</div>
+                <div class="info-value">610 Acre</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">EXAMS</div>
+                <div class="info-value">CUET</div>
+              </div>
+            </div>
+            <a href="college/cujammu.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
@@ -1613,35 +1654,12 @@
           </div>
         </div>
 
-        <!-- GMC Jammu -->
-        <div class="inst-card" data-district="jammu">
-          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d"
-              class="inst-img" alt="GMC Jammu" /></div>
-          <div class="inst-body">
-            <h4>Government Medical College (GMC)</h4>
-            <div class="info-grid">
-              <div class="info-box">
-                <div class="info-label">EST</div>
-                <div class="info-value">1973</div>
-              </div>
-              <div class="info-box">
-                <div class="info-label">TYPE</div>
-                <div class="info-value">Medical</div>
-              </div>
-              <div class="info-box">
-                <div class="info-label">RATING</div>
-                <div class="info-value">⭐ 4.7</div>
-              </div>
-            </div>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
-          </div>
-        </div>
 
         <!-- MIET -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">NAAC A</span>
-          <div class="inst-img-wrapper"><img src="college images/Model institute of engineering and technology.jpg.jpeg" class="inst-img"
-              alt="MIET" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Model institute of engineering and technology.jpg.jpeg"
+              class="inst-img" alt="MIET" /></div>
           <div class="inst-body">
             <h4>MIET Jammu</h4>
             <div class="info-grid">
@@ -1665,7 +1683,8 @@
         <!-- ITI Jammu -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Vocational Training</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/nSSF63ZkC0Vmv4yeH" class="inst-img" alt="ITI Jammu" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Govt. ITI Jammu (Shakti Nagar).jpg" class="inst-img"
+              alt="ITI Jammu" /></div>
           <div class="inst-body">
             <h4>Govt. ITI Jammu (Shakti Nagar)</h4>
             <div class="info-grid">
@@ -1682,14 +1701,15 @@
                 <div class="info-value">10th/12th</div>
               </div>
             </div>
-            <p class="inst-desc" style="display:none;">Offers high-tech workshops and computer labs for vocational excellence in Shakti Nagar.</p>
+            <p class="inst-desc" style="display:none;">Offers high-tech workshops and computer labs for vocational
+              excellence in Shakti Nagar.</p>
             <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- BGSBU -->
         <div class="inst-card" data-district="rajouri">
-          <div class="inst-img-wrapper"><img src="bgsbu_rajouri_campus_1774956839858.png" class="inst-img"
+          <div class="inst-img-wrapper"><img src="college images/Baba-Ghulam-Shah-Badhshah-University-1.jpg.jpeg" class="inst-img"
               alt="BGSBU" /></div>
           <div class="inst-body">
             <h4>Baba Ghulam Shah Badshah Univ.</h4>
@@ -1699,46 +1719,47 @@
                 <div class="info-value">Rajouri</div>
               </div>
               <div class="info-box">
-                <div class="info-label">CAMPUS</div>
-                <div class="info-value">450ac</div>
+                <div class="info-label">COURSES</div>
+                <div class="info-value">B.Tech/Nursing</div>
               </div>
               <div class="info-box">
-                <div class="info-label">EST</div>
-                <div class="info-value">2002</div>
+                <div class="info-label">EXAMS</div>
+                <div class="info-value">JEE/CUET</div>
               </div>
             </div>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/bgsbu.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- GMC Rajouri -->
         <div class="inst-card" data-district="rajouri">
-          <div class="inst-img-wrapper"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2"
+          <div class="inst-img-wrapper"><img src="college images/Government Medical College (GMC).jpg"
               class="inst-img" alt="GMC Rajouri" /></div>
           <div class="inst-body">
-            <h4>Government Medical College</h4>
+            <h4>Government Medical College (GMC)</h4>
             <div class="info-grid">
               <div class="info-box">
-                <div class="info-label">TYPE</div>
-                <div class="info-value">Medical</div>
+                <div class="info-label">FOCUS</div>
+                <div class="info-value">MBBS</div>
               </div>
               <div class="info-box">
                 <div class="info-label">EST</div>
                 <div class="info-value">2019</div>
               </div>
               <div class="info-box">
-                <div class="info-label">LOC</div>
-                <div class="info-value">Rajouri</div>
+                <div class="info-label">EXAMS</div>
+                <div class="info-value">NEET-UG</div>
               </div>
             </div>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/gmcrajouri.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- Valley View Institute -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">Teacher Training Focus</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/Bi0mWf3dmYSIEcEfy" class="inst-img" alt="Valley View Institute" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Valley view inst .jpeg" class="inst-img"
+              alt="Valley View Institute" /></div>
           <div class="inst-body">
             <h4>Valley View Institute (Sunderbani)</h4>
             <div class="info-grid">
@@ -1755,15 +1776,15 @@
                 <div class="info-value">Sunderbani</div>
               </div>
             </div>
-            <p class="inst-desc" style="display:none;">Recognized by NCTE, providing quality undergraduate education in Arts, Commerce, and Computer Apps.</p>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/valleyview.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- GDC Budhal -->
         <div class="inst-card" data-district="rajouri">
-          <span class="inst-badge">NAAC Accredited</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/eXPZ6x80psEACA9ek" class="inst-img" alt="GDC Budhal" /></div>
+          <span class="inst-badge">UGC Recognized</span>
+          <div class="inst-img-wrapper"><img src="college images/Government degree clg.jpeg" class="inst-img"
+              alt="GDC Budhal" /></div>
           <div class="inst-body">
             <h4>Govt. Degree College Budhal</h4>
             <div class="info-grid">
@@ -1772,23 +1793,27 @@
                 <div class="info-value">2008</div>
               </div>
               <div class="info-box">
-                <div class="info-label">STREAMS</div>
-                <div class="info-value">Arts & Science</div>
+                <div class="info-label">FEES</div>
+                <div class="info-value">₹6k-₹9k</div>
               </div>
               <div class="info-box">
-                <div class="info-label">LOC</div>
-                <div class="info-value">Budhal</div>
+                <div class="info-label">STREAMS</div>
+                <div class="info-value">Arts/Science</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">EXAMS</div>
+                <div class="info-value">CUET</div>
               </div>
             </div>
-            <p class="inst-desc" style="display:none;">NAAC accredited institution with smart classrooms, science labs, and Wi-Fi campus in Budhal.</p>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/gdcbudhal.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
         <!-- GDC Rajouri -->
         <div class="inst-card" data-district="rajouri">
-          <span class="inst-badge">NAAC Accredited</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/fiMCXMUuqI2wKvBDv" class="inst-img" alt="GDC Rajouri" /></div>
+          <span class="inst-badge">NAAC 'A' Grade</span>
+          <div class="inst-img-wrapper"><img src="college images/Govt degree clg rajouri.jpg.jpeg" class="inst-img"
+              alt="GDC Rajouri" /></div>
           <div class="inst-body">
             <h4>Government Degree College Rajouri</h4>
             <div class="info-grid">
@@ -1797,42 +1822,22 @@
                 <div class="info-value">1981</div>
               </div>
               <div class="info-box">
-                <div class="info-label">FEE</div>
-                <div class="info-value">₹4.1K/yr</div>
+                <div class="info-label">CAMPUS</div>
+                <div class="info-value">75 Acres</div>
+              </div>
+              <div class="info-box">
+                <div class="info-label">FEES</div>
+                <div class="info-value">₹4.1k/yr</div>
               </div>
               <div class="info-box">
                 <div class="info-label">ADMISSIONS</div>
-                <div class="info-value">Merit-Based</div>
+                <div class="info-value">CUET</div>
               </div>
             </div>
-            <p class="inst-desc" style="display:none;">Offers BA, BSc, BCom, and BBA with a focus on academics and extracurricular activities.</p>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
+            <a href="college/gdcrajouri.html" class="btn-view">View Profile Details</a>
           </div>
         </div>
 
-        <!-- Sanskriti -->
-        <div class="inst-card" data-district="global">
-          <div class="inst-img-wrapper"><img src="https://entranceforms.com/frontend/images/1735397702_back.jpeg"
-              class="inst-img" alt="Sanskriti" /></div>
-          <div class="inst-body">
-            <h4>Sanskriti University</h4>
-            <div class="info-grid">
-              <div class="info-box">
-                <div class="info-label">LOC</div>
-                <div class="info-value">Mathura</div>
-              </div>
-              <div class="info-box">
-                <div class="info-label">RATING</div>
-                <div class="info-value">⭐ 4.5</div>
-              </div>
-              <div class="info-box">
-                <div class="info-label">RANK</div>
-                <div class="info-value">Top 100</div>
-              </div>
-            </div>
-            <a href="college/collegedata.html" class="btn-view">View Profile Details</a>
-          </div>
-        </div>
       </div>
       <div style="text-align:center; margin-top:50px;">
         <button class="btn-main" onclick="toggleSelectionMode(true)"
@@ -1847,7 +1852,7 @@
         <!-- Jodhamal -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Top Rated School</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/E1eA1pw1sY8Duu3rI" class="inst-img"
+          <div class="inst-img-wrapper"><img src="college images/Jodhamal school.jpeg" class="inst-img"
               alt="Jodhamal" /></div>
           <div class="inst-body">
             <h4>Jodhamal Public School</h4>
@@ -1869,7 +1874,7 @@
               sports.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'Jodhamal Public School',
-              img: 'https://share.google/images/E1eA1pw1sY8Duu3rI',
+              img: 'college images/Jodhamal school.jpeg',
               est: '2005',
               affil: 'CBSE',
               contact: '+91-191-2460711',
@@ -1883,7 +1888,7 @@
         <!-- Heritage -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier Choice</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/kGAIWmGx6AP0bJRyR" class="inst-img"
+          <div class="inst-img-wrapper"><img src="college images/Heritage School.jpeg" class="inst-img"
               alt="Heritage" /></div>
           <div class="inst-body">
             <h4>Heritage School</h4>
@@ -1905,7 +1910,7 @@
               counseling.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'Heritage School',
-              img: 'https://share.google/images/kGAIWmGx6AP0bJRyR',
+              img: 'college images/Heritage School.jpeg',
               est: '2005',
               affil: 'CBSE',
               contact: '+91-191-2468977',
@@ -1954,7 +1959,8 @@
         <!-- JNV Poonch -->
         <div class="inst-card" data-district="poonch">
           <span class="inst-badge">Residential Excellence</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Poonch" /></div>
+          <div class="inst-img-wrapper"><img src="college images/JNV Poonch.jpeg" class="inst-img"
+              alt="JNV Poonch" /></div>
           <div class="inst-body">
             <h4>JNV Poonch</h4>
             <div class="info-grid">
@@ -1974,7 +1980,7 @@
             <p class="inst-desc">Quality, free, and residential education for talented rural children in Poonch.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'JNV Poonch',
-              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              img: 'college images/JNV Poonch.jpeg',
               est: '1986',
               affil: 'CBSE',
               contact: '0196-522xxxx',
@@ -1988,7 +1994,8 @@
         <!-- HSS Boys Poonch -->
         <div class="inst-card" data-district="poonch">
           <span class="inst-badge">Heritage School</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/oG7AbtI1FSRe28UB9" class="inst-img" alt="HSS Boys Poonch" /></div>
+          <div class="inst-img-wrapper"><img src="college images/HSS Boys Poonch.jpeg" class="inst-img"
+              alt="HSS Boys Poonch" /></div>
           <div class="inst-body">
             <h4>HSS Boys Poonch</h4>
             <div class="info-grid">
@@ -2005,10 +2012,11 @@
                 <div class="info-value">9-12</div>
               </div>
             </div>
-            <p class="inst-desc">One of the oldest government schools in Poonch, providing quality education since 1935.</p>
+            <p class="inst-desc">One of the oldest government schools in Poonch, providing quality education since 1935.
+            </p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'HSS Boys Poonch',
-              img: 'https://share.google/images/oG7AbtI1FSRe28UB9',
+              img: 'college images/HSS Boys Poonch.jpeg',
               est: '1935',
               affil: 'JKBOSE',
               contact: 'N/A',
@@ -2022,7 +2030,8 @@
         <!-- International School Rajouri -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">Premier in Rajouri</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/PIaoY07OBzYK6Okbd" class="inst-img" alt="International School Rajouri" /></div>
+          <div class="inst-img-wrapper"><img src="college images/International School Rajouri.avif" class="inst-img"
+              alt="International School Rajouri" /></div>
           <div class="inst-body">
             <h4>International School Rajouri</h4>
             <div class="info-grid">
@@ -2039,10 +2048,11 @@
                 <div class="info-value">3k Books</div>
               </div>
             </div>
-            <p class="inst-desc">Leading co-educational institution in Rajouri with modern IT and library facilities since 1970.</p>
+            <p class="inst-desc">Leading co-educational institution in Rajouri with modern IT and library facilities
+              since 1970.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'International School Rajouri',
-              img: 'https://share.google/images/PIaoY07OBzYK6Okbd',
+              img: 'college images/International School Rajouri.avif',
               est: '1970',
               affil: 'JKBOSE/CBSE',
               contact: '0196-2263258',
@@ -2056,7 +2066,8 @@
         <!-- KV Rajouri -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">PM Shri School</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/eHFALnOxPgknz7hvS" class="inst-img" alt="KV Rajouri" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Pm shri kv.jpeg" class="inst-img"
+              alt="KV Rajouri" /></div>
           <div class="inst-body">
             <h4>PM Shri KV BSF Campus Rajouri</h4>
             <div class="info-grid">
@@ -2073,10 +2084,11 @@
                 <div class="info-value">Nominal</div>
               </div>
             </div>
-            <p class="inst-desc">A Central Government school offering holistic, child-centered education with PCM, PCB, and Commerce streams.</p>
+            <p class="inst-desc">A Central Government school offering holistic, child-centered education with PCM, PCB,
+              and Commerce streams.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'PM Shri KV BSF Campus Rajouri',
-              img: 'https://share.google/images/eHFALnOxPgknz7hvS',
+              img: 'college images/Pm shri kv.jpeg',
               est: '1980',
               affil: 'CBSE',
               contact: '0196-2263xxx',
@@ -2090,7 +2102,8 @@
         <!-- Garib Nawaz Public School -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">Focus on Basic Learning</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/KQE1lJcfbZbw6cEHA" class="inst-img" alt="Garib Nawaz Public School" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Garib Nawaz Public School.jpeg" class="inst-img"
+              alt="Garib Nawaz Public School" /></div>
           <div class="inst-body">
             <h4>Garib Nawaz Public School</h4>
             <div class="info-grid">
@@ -2107,10 +2120,11 @@
                 <div class="info-value">Rajouri</div>
               </div>
             </div>
-            <p class="inst-desc">Provides basic educational facilities including computer-aided learning and a focused teaching staff.</p>
+            <p class="inst-desc">Provides basic educational facilities including computer-aided learning and a focused
+              teaching staff.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'Garib Nawaz Public School',
-              img: 'https://share.google/images/KQE1lJcfbZbw6cEHA',
+              img: 'college images/Garib Nawaz Public School.jpeg',
               est: 'N/A',
               affil: 'JKBOSE',
               contact: 'N/A',
@@ -2124,7 +2138,8 @@
         <!-- JNV Rajouri -->
         <div class="inst-card" data-district="rajouri">
           <span class="inst-badge">Residential Excellence</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/RFlLU9JqtoUbR8GUn" class="inst-img" alt="JNV Rajouri" /></div>
+          <div class="inst-img-wrapper"><img src="college images/JNV Rajouri (Kotranka).avif" class="inst-img"
+              alt="JNV Rajouri" /></div>
           <div class="inst-body">
             <h4>JNV Rajouri (Kotranka)</h4>
             <div class="info-grid">
@@ -2141,10 +2156,11 @@
                 <div class="info-value">JNVST</div>
               </div>
             </div>
-            <p class="inst-desc">Premier residential school in Kotranka, providing free quality education to rural toppers.</p>
+            <p class="inst-desc">Premier residential school in Kotranka, providing free quality education to rural
+              toppers.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'JNV Rajouri (Kotranka)',
-              img: 'https://share.google/images/RFlLU9JqtoUbR8GUn',
+              img: 'college images/JNV Rajouri (Kotranka).avif',
               est: '1986',
               affil: 'CBSE',
               contact: '9749444464',
@@ -2158,7 +2174,8 @@
         <!-- JNV Jammu-I (Gharota) -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Free Residential</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Jammu-I" /></div>
+          <div class="inst-img-wrapper"><img src="college images/JNV jammu 1.jpg.jpeg" class="inst-img"
+              alt="JNV Jammu-I" /></div>
           <div class="inst-body">
             <h4>JNV Jammu-I (Gharota)</h4>
             <div class="info-grid">
@@ -2175,10 +2192,11 @@
                 <div class="info-value">0191-2624919</div>
               </div>
             </div>
-            <p class="inst-desc">Providing a comprehensive residential program with modern facilities in the Gharota district.</p>
+            <p class="inst-desc">Providing a comprehensive residential program with modern facilities in the Gharota
+              district.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'JNV Jammu-I (Gharota)',
-              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              img: 'college images/JNV jammu 1.jpg.jpeg',
               est: '1986',
               affil: 'CBSE',
               contact: '0191-2624919',
@@ -2192,7 +2210,8 @@
         <!-- JNV Jammu-II (Akhnoor) -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">New Excellence</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/PNUDgIQkk5xonCery" class="inst-img" alt="JNV Jammu-II" /></div>
+          <div class="inst-img-wrapper"><img src="college images/JV jammu 2akhnoor.jpg.jpeg" class="inst-img"
+              alt="JNV Jammu-II" /></div>
           <div class="inst-body">
             <h4>JNV Jammu-II (Akhnoor)</h4>
             <div class="info-grid">
@@ -2209,10 +2228,11 @@
                 <div class="info-value">Akhnoor</div>
               </div>
             </div>
-            <p class="inst-desc">A newer institution in the JNV network, providing top-tier education to rural toppers.</p>
+            <p class="inst-desc">A newer institution in the JNV network, providing top-tier education to rural toppers.
+            </p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'JNV Jammu-II (Akhnoor)',
-              img: 'https://share.google/images/PNUDgIQkk5xonCery',
+              img: 'college images/JV jammu 2akhnoor.jpg.jpeg',
               est: '2017',
               affil: 'CBSE',
               contact: 'N/A',
@@ -2226,7 +2246,8 @@
         <!-- KC International School -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Application-Based</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/4HN0uB4mmu2C7dp4j" class="inst-img" alt="KC International School" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Kc international school.jpeg" class="inst-img"
+              alt="KC International School" /></div>
           <div class="inst-body">
             <h4>KC International School</h4>
             <div class="info-grid">
@@ -2243,10 +2264,11 @@
                 <div class="info-value">+91-191-2954747</div>
               </div>
             </div>
-            <p class="inst-desc">Emphasizes practical, application-based learning to foster critical thinking and real-world skills.</p>
+            <p class="inst-desc">Emphasizes practical, application-based learning to foster critical thinking and
+              real-world skills.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'KC International School',
-              img: 'https://share.google/images/4HN0uB4mmu2C7dp4j',
+              img: 'college images/Kc international school.jpeg',
               est: '2004',
               affil: 'CBSE',
               contact: '+91-191-2954747',
@@ -2260,7 +2282,8 @@
         <!-- JK Public School -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier Institution</span>
-          <div class="inst-img-wrapper"><img src="college images/Jk public school .jpg.jpeg" class="inst-img" alt="JK Public School" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Jk public school .jpg.jpeg" class="inst-img"
+              alt="JK Public School" /></div>
           <div class="inst-body">
             <h4>JK Public School</h4>
             <div class="info-grid">
@@ -2277,10 +2300,11 @@
                 <div class="info-value">070515 22290</div>
               </div>
             </div>
-            <p class="inst-desc">One of the most prestigious schools in Jammu, offering quality education and a holistic environment for student development.</p>
+            <p class="inst-desc">One of the most prestigious schools in Jammu, offering quality education and a holistic
+              environment for student development.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'JK Public School',
-              img: 'https://share.google/images/94qxfGDUkSDXEzVg0',
+              img: 'college images/Jk public school .jpg.jpeg',
               est: '1992',
               affil: 'CBSE',
               contact: '070515 22290',
@@ -2294,7 +2318,8 @@
         <!-- APS Jammu Cantt -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Army Institution</span>
-          <div class="inst-img-wrapper"><img src="college images/Army public school .jpg.jpeg" class="inst-img" alt="APS Jammu Cantt" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Army public school .jpg.jpeg" class="inst-img"
+              alt="APS Jammu Cantt" /></div>
           <div class="inst-body">
             <h4>APS Jammu Cantt</h4>
             <div class="info-grid">
@@ -2311,10 +2336,11 @@
                 <div class="info-value">+91 9086030003</div>
               </div>
             </div>
-            <p class="inst-desc">Focuses on providing a comprehensive education, fostering intelligence, character, and a balanced personality.</p>
+            <p class="inst-desc">Focuses on providing a comprehensive education, fostering intelligence, character, and
+              a balanced personality.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'APS Jammu Cantt',
-              img: 'https://share.google/images/4Doa1MDhvQGzEcB7M',
+              img: 'college images/Army public school .jpg.jpeg',
               est: '1984',
               affil: 'CBSE',
               contact: '+91 9086030003',
@@ -2328,7 +2354,8 @@
         <!-- APS Kaluchak -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Value-Based</span>
-          <div class="inst-img-wrapper"><img src="college images/Army public school kaluchak.jpg.jpeg" class="inst-img" alt="APS Kaluchak" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Army public school kaluchak.jpg.jpeg" class="inst-img"
+              alt="APS Kaluchak" /></div>
           <div class="inst-body">
             <h4>APS Kaluchak</h4>
             <div class="info-grid">
@@ -2345,10 +2372,11 @@
                 <div class="info-value">⭐ 4.8</div>
               </div>
             </div>
-            <p class="inst-desc">Implements a value-based education through scholastic and co-scholastic activities for all-around development.</p>
+            <p class="inst-desc">Implements a value-based education through scholastic and co-scholastic activities for
+              all-around development.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'APS Kaluchak',
-              img: 'https://share.google/images/wZQxNrGPrI7T6lqHI',
+              img: 'college images/Army public school kaluchak.jpg.jpeg',
               est: '1980',
               affil: 'CBSE',
               contact: 'N/A',
@@ -2362,7 +2390,8 @@
         <!-- APS Damana -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Premier APS</span>
-          <div class="inst-img-wrapper"><img src="college images/Army public school damana.jpg.jpeg" class="inst-img" alt="APS Damana" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Army public school damana.jpg.jpeg" class="inst-img"
+              alt="APS Damana" /></div>
           <div class="inst-body">
             <h4>APS Damana</h4>
             <div class="info-grid">
@@ -2379,10 +2408,11 @@
                 <div class="info-value">+91 6006413231</div>
               </div>
             </div>
-            <p class="inst-desc">Aims to provide quality education and develop well-rounded individuals through disciplined academic rigor.</p>
+            <p class="inst-desc">Aims to provide quality education and develop well-rounded individuals through
+              disciplined academic rigor.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'APS Damana',
-              img: 'https://share.google/images/DgZapMAuXVrtvni2S',
+              img: 'college images/Army public school damana.jpg.jpeg',
               est: '1986',
               affil: 'CBSE (780013)',
               contact: '+91 6006413231',
@@ -2396,7 +2426,8 @@
         <!-- APS Ratnuchak -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Excellence Driven</span>
-          <div class="inst-img-wrapper"><img src="college images/Army public school ratnuchak.jpg.jpeg" class="inst-img" alt="APS Ratnuchak" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Army public school ratnuchak.jpg.jpeg" class="inst-img"
+              alt="APS Ratnuchak" /></div>
           <div class="inst-body">
             <h4>APS Ratnuchak</h4>
             <div class="info-grid">
@@ -2413,10 +2444,11 @@
                 <div class="info-value">⭐ 4.8</div>
               </div>
             </div>
-            <p class="inst-desc">Aims to achieve academic excellence and develop well-adjusted, adaptable, and integrated personalities.</p>
+            <p class="inst-desc">Aims to achieve academic excellence and develop well-adjusted, adaptable, and
+              integrated personalities.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'APS Ratnuchak',
-              img: 'https://share.google/images/jgOEn5XgvrNtscwLu',
+              img: 'college images/Army public school ratnuchak.jpg.jpeg',
               est: '1983',
               affil: 'CBSE',
               contact: 'N/A',
@@ -2430,7 +2462,8 @@
         <!-- Springdales School -->
         <div class="inst-card" data-district="jammu">
           <span class="inst-badge">Holistic Learning</span>
-          <div class="inst-img-wrapper"><img src="https://share.google/images/xnK3HANmqoGIyoqpS" class="inst-img" alt="Springdales School" /></div>
+          <div class="inst-img-wrapper"><img src="college images/Springdales School.avif" class="inst-img"
+              alt="Springdales School" /></div>
           <div class="inst-body">
             <h4>Springdales School</h4>
             <div class="info-grid">
@@ -2447,10 +2480,11 @@
                 <div class="info-value">0191-2642888</div>
               </div>
             </div>
-            <p class="inst-desc">Focuses on holistic, activity-based, and experiential learning for classes Nursery to 12.</p>
+            <p class="inst-desc">Focuses on holistic, activity-based, and experiential learning for classes Nursery to
+              12.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'Springdales School',
-              img: 'https://share.google/images/xnK3HANmqoGIyoqpS',
+              img: 'college images/Springdales School.avif',
               est: '2013',
               affil: 'CBSE',
               contact: '0191-2642888',
@@ -2464,7 +2498,8 @@
         <!-- Christ School Poonch -->
         <div class="inst-card" data-district="poonch">
           <span class="inst-badge">Premier in Poonch</span>
-          <div class="inst-img-wrapper"><img src="college images/CHRIST SCHOOL POONCH.jpg.jpeg" class="inst-img" alt="Christ School Poonch" /></div>
+          <div class="inst-img-wrapper"><img src="college images/CHRIST SCHOOL POONCH.jpg.jpeg" class="inst-img"
+              alt="Christ School Poonch" /></div>
           <div class="inst-body">
             <h4>Christ School Poonch</h4>
             <div class="info-grid">
@@ -2481,10 +2516,11 @@
                 <div class="info-value">Poonch</div>
               </div>
             </div>
-            <p class="inst-desc">A unique and creative approach to education, fostering character and intellectual competence since 1990.</p>
+            <p class="inst-desc">A unique and creative approach to education, fostering character and intellectual
+              competence since 1990.</p>
             <a href="javascript:void(0)" onclick="showDetails({
               name: 'Christ School Poonch',
-              img: 'https://share.google/images/zXWvjxmtMQQ8VPnw7',
+              img: 'college images/CHRIST SCHOOL POONCH.jpg.jpeg',
               est: '1990',
               affil: 'JKBOSE',
               contact: '0196-522xxxx',
@@ -2525,7 +2561,8 @@
       <!-- Mentor 1 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop" alt="Sarah J." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop" alt="Sarah J." />
           <div class="status-ring"></div>
         </div>
         <h4>Aryan Malhotra</h4>
@@ -2541,7 +2578,8 @@
       <!-- Mentor 2 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop" alt="Arjun M." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop" alt="Arjun M." />
           <div class="status-ring"></div>
         </div>
         <h4>Isha Sharma</h4>
@@ -2557,7 +2595,8 @@
       <!-- Mentor 3 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Priya K." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Priya K." />
           <div class="status-ring"></div>
         </div>
         <h4>Priya Kapoor</h4>
@@ -2573,7 +2612,8 @@
       <!-- Mentor 4 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Rohit B." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Rohit B." />
           <div class="status-ring"></div>
         </div>
         <h4>Rohit Bansal</h4>
@@ -2589,7 +2629,8 @@
       <!-- Mentor 5 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Ananya T." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Ananya T." />
           <div class="status-ring"></div>
         </div>
         <h4>Ananya Thakur</h4>
@@ -2605,7 +2646,8 @@
       <!-- Mentor 6 -->
       <div class="mentor-card">
         <div class="mentor-avatar-wrapper">
-          <img class="mentor-avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&h=200&fit=crop" alt="David S." />
+          <img class="mentor-avatar"
+            src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&h=200&fit=crop" alt="David S." />
           <div class="status-ring"></div>
         </div>
         <h4>Vikram Singh</h4>
@@ -2633,7 +2675,9 @@
       <div class="stars">★★★★★</div>
       <p>"Suvidha helped me connect with an amazing mentor from Google. I got my dream job at Microsoft!"</p>
       <div class="profile">
-        <img src="https://preview.redd.it/god-level-ghibli-style-bollywood-images-v0-19j408j5x4re1.jpg?width=640&crop=smart&auto=webp&s=4a4bc064965c522e74dc1f8c0adc911ca790da8d" alt="Aaditya">
+        <img
+          src="https://preview.redd.it/god-level-ghibli-style-bollywood-images-v0-19j408j5x4re1.jpg?width=640&crop=smart&auto=webp&s=4a4bc064965c522e74dc1f8c0adc911ca790da8d"
+          alt="Aaditya">
         <div>
           <h3>Aaditya Gupta</h3>
           <span>IIT Delhi '24 – Placed at Microsoft</span>
@@ -2644,7 +2688,9 @@
       <div class="stars">★★★★★</div>
       <p>"The college comparison tool was incredibly detailed. Made my decision so much easier!"</p>
       <div class="profile">
-        <img src="https://i.ytimg.com/vi/kXfMWv3pvTM/oardefault.jpg?sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLBRfoWo4Z3ANFnYT3kuTv5B1XTJyw" alt="Kavya">
+        <img
+          src="https://i.ytimg.com/vi/kXfMWv3pvTM/oardefault.jpg?sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLBRfoWo4Z3ANFnYT3kuTv5B1XTJyw"
+          alt="Kavya">
         <div>
           <h3>Kavya Reddy</h3>
           <span>BITS Pilani '23 – Got into Dream College</span>
@@ -2689,14 +2735,18 @@
     <div class="footer-container">
       <div class="footer-about">
         <span class="logo">Suvidha</span>
-        <p>Expert career guidance, detailed institution comparisons, and 1-on-1 mentorship to help you build your dream career path with confidence.</p>
+        <p>Expert career guidance, detailed institution comparisons, and 1-on-1 mentorship to help you build your dream
+          career path with confidence.</p>
         <div class="socials">
-          <a href="#" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
-          <a href="#" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-          <a href="#" title="Twitter"><img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="Twitter"></a>
+          <a href="#" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+              alt="LinkedIn"></a>
+          <a href="#" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              alt="Instagram"></a>
+          <a href="#" title="Twitter"><img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png"
+              alt="Twitter"></a>
         </div>
       </div>
-      
+
       <div class="footer-links">
         <h4>Platform</h4>
         <ul>
@@ -2837,7 +2887,7 @@
     function toggleSelectionMode(show) {
       const cards = document.querySelectorAll('.inst-card');
       const floatingBar = document.getElementById('compare-floating-bar');
-      
+
       if (!show) {
         selectedInstitutions = [];
         if (document.getElementById('compare-count')) {
@@ -2868,21 +2918,21 @@
       const card = checkbox.closest('.inst-card');
       card.classList.toggle('selected');
       checkbox.classList.toggle('selected');
-      
+
       const isSelected = card.classList.contains('selected');
       const instName = card.querySelector('h4').textContent;
-      
+
       if (isSelected) {
         selectedInstitutions.push(instName);
       } else {
         selectedInstitutions = selectedInstitutions.filter(n => n !== instName);
       }
-      
+
       const floatingBar = document.getElementById('compare-floating-bar');
       if (document.getElementById('compare-count')) {
         document.getElementById('compare-count').textContent = selectedInstitutions.length;
       }
-      
+
       if (floatingBar) {
         if (selectedInstitutions.length > 0) {
           floatingBar.classList.add('active');
@@ -2890,7 +2940,7 @@
           floatingBar.classList.remove('active');
         }
       }
-      
+
       // Save to localStorage for compare.html
       localStorage.setItem('selectedColleges', JSON.stringify(selectedInstitutions));
     }
@@ -2939,7 +2989,7 @@
       <div class="modal-body">
         <h2 id="modal-name" style="font-size: 2rem; margin-bottom: 10px;">School Name</h2>
         <p id="modal-desc" style="color: #64748b; margin-bottom: 20px;">Detailed information provided by Suvidha.</p>
-        
+
         <div class="modal-detail-grid">
           <div class="detail-item">
             <h5>Established</h5>
@@ -2964,7 +3014,8 @@
         </div>
 
         <div style="margin-top: 30px; display: flex; gap: 15px;">
-          <a href="#" class="btn-main" style="flex: 1; text-align: center; border-radius: 12px; padding: 15px;">Apply Now</a>
+          <a href="#" class="btn-main" style="flex: 1; text-align: center; border-radius: 12px; padding: 15px;">Apply
+            Now</a>
           <button class="btn-session" style="flex: 1; border-radius: 12px;">Get Virtual Tour</button>
         </div>
       </div>
@@ -2982,7 +3033,7 @@
       document.getElementById('modal-email').textContent = schoolData.email || 'N/A';
       document.getElementById('modal-web').textContent = schoolData.web || 'N/A';
       document.getElementById('modal-desc').textContent = schoolData.desc || 'Quality education focusing on holistic development and academic excellence.';
-      
+
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
