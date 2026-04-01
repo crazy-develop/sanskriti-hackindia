@@ -470,12 +470,28 @@
         <li><a href="jobs.html">Opportunities</a></li>
         <li><a href="solver.html">AI Solver</a></li>
       </ul>
-      <a href="#" class="profile-nav">
+      <a href="dashboard.html" class="profile-nav" id="nav-profile" style="display: none;">
         <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
-        <span>My Profile</span>
+        <span id="nav-username">My Profile</span>
       </a>
     </div>
   </nav>
+
+  <script>
+    function checkLoginStatus() {
+      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+      const email = localStorage.getItem("userEmail");
+      
+      if (isLoggedIn) {
+        document.getElementById("nav-profile").style.display = "flex";
+        if (email) {
+          document.getElementById("nav-username").textContent = email.split('@')[0];
+        }
+      }
+    }
+    // Add to existing window.onload if any, or just call it
+    document.addEventListener('DOMContentLoaded', checkLoginStatus);
+  </script>
 
   <section class="mentor-hero">
     <h1>Peer-to-Peer <span>Mentorship</span></h1>

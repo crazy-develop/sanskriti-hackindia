@@ -305,15 +305,22 @@
 
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            // Get user name from profile, or fallback to email part if empty
             const name = user.displayName || user.email.split('@')[0];
             document.getElementById("profileName").innerText = name.charAt(0).toUpperCase() + name.slice(1);
-
             document.getElementById("profileEmail").innerText = user.email;
             document.getElementById("profileRole").innerText = userRole.charAt(0).toUpperCase() + userRole.slice(1) + " Account";
           } else {
-            console.log("No user found, redirecting...");
-            window.location.href = "login.html";
+            // Check local storage for persistent hackathon state
+            const localUser = localStorage.getItem("userEmail");
+            if (localUser) {
+              const name = localUser.split('@')[0];
+              document.getElementById("profileName").innerText = name.charAt(0).toUpperCase() + name.slice(1);
+              document.getElementById("profileEmail").innerText = localUser;
+              document.getElementById("profileRole").innerText = userRole.charAt(0).toUpperCase() + userRole.slice(1) + " Account (Restored)";
+            } else {
+              console.log("No user found, redirecting...");
+              window.location.href = "login.html";
+            }
           }
         });
 
@@ -322,6 +329,7 @@
             await signOut(auth);
             localStorage.removeItem("loggedIn");
             localStorage.removeItem("userRole");
+            localStorage.removeItem("userEmail");
             window.location.href = "login.html";
           }
         });

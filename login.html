@@ -134,12 +134,14 @@
         
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("userRole", currentRole);
+        localStorage.setItem("userEmail", email);
         
         msgDiv.innerText = "Login successful! Redirecting...";
         msgDiv.className = "success";
+        msgDiv.style.display = "block";
         
         setTimeout(() => {
-          window.location.href = "dashboard.html";
+          window.location.href = "index.html";
         }, 1000);
 
       } catch (error) {
