@@ -67,7 +67,7 @@
     <div class="role-tabs">
       <div class="role-tab active" onclick="setRole('student')">Student</div>
       <div class="role-tab" onclick="setRole('ngo')">NGO</div>
-      <div class="role-tab" onclick="setRole('government')">Government</div>
+      <div class="role-tab" id="parentTab" onclick="setRole('parent')">Parent</div>
     </div>
     
     <div class="form-group">
@@ -97,7 +97,7 @@
       document.querySelectorAll('.role-tab').forEach(tab => {
         tab.classList.remove('active');
         if(tab.innerText.toLowerCase() === role) tab.classList.add('active');
-        if(role === 'government' && tab.innerText === 'Government') tab.classList.add('active');
+        if(role === 'parent' && tab.innerText === 'Parent') tab.classList.add('active');
       });
       document.getElementById('loginTitle').innerText = `Login as ${role.charAt(0).toUpperCase() + role.slice(1)}`;
     };
@@ -105,7 +105,7 @@
     const configs = {
       student: './firebaseConfig/studentConfig.js',
       ngo: './firebaseConfig/ngoConfig.js',
-      government: './firebaseConfig/govConfig.js'
+      parent: './firebaseConfig/govConfig.js' // Mapping parent to existing gov config
     };
 
     document.getElementById("loginBtn").addEventListener("click", async () => {
@@ -140,9 +140,11 @@
         msgDiv.className = "success";
         msgDiv.style.display = "block";
         
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1000);
+        msgDiv.style.display = "block";
+      
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1000);
 
       } catch (error) {
         msgDiv.innerText = "Error: " + error.message;
