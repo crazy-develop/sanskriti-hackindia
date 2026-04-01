@@ -57,6 +57,12 @@
     .success { color: #047857; }
     .error { color: #dc2626; }
   </style>
+  <!-- Add session check script -->
+  <script>
+    if (localStorage.getItem("loggedIn") === "true") {
+      window.location.href = "index.html";
+    }
+  </script>
 </head>
 <body>
 
