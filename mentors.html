@@ -105,7 +105,7 @@
     /* Mentor Search */
     .search-section {
       max-width: 1000px;
-      margin: -50px auto 60px;
+      margin: -20px auto 60px;
       background: white;
       padding: 30px;
       border-radius: 24px;
@@ -124,6 +124,11 @@
       width: 100%;
       outline: none;
       transition: 0.3s;
+    }
+
+    .search-section input:focus, .search-section select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.1);
     }
 
     .search-section button {
@@ -280,6 +285,16 @@
       transform: scale(1.02);
     }
 
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px;
+      background: white;
+      border-radius: 24px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
     /* Modal Styling */
     .modal-overlay {
       position: fixed;
@@ -428,22 +443,23 @@
   </nav>
 
   <section class="mentor-hero">
-    <h1>Your Success, Our <span>Mission</span></h1>
-    <p>Connect with verified experts. Minimal hourly charges. Premium results.</p>
+    <h1>Peer-to-Peer <span>Mentorship</span></h1>
+    <p>Connect with senior students from your dream colleges. Real insights, real guidance.</p>
   </section>
 
   <div class="search-section">
-    <input type="text" placeholder="Search by institution or expertise...">
-    <select>
-      <option value="">Expertise Field</option>
-      <option>Engineering</option>
-      <option>Medical</option>
-      <option>Management</option>
-      <option>UPSC/IAS</option>
-      <option>Law</option>
-      <option>Data Science</option>
+    <input type="text" id="mentor-search" placeholder="Search by name, college, or field..." oninput="filterMentors()">
+    <select id="expertise-filter" onchange="filterMentors()">
+      <option value="">All Expertise Fields</option>
+      <option value="AI & Robotics">Engineering / AI</option>
+      <option value="Coding Cultures">CSE / Coding</option>
+      <option value="Management">Management / MBA</option>
+      <option value="Medical">Medical / MBBS</option>
+      <option value="Law">Law / Legal</option>
+      <option value="UPSC">UPSC / Civil Services</option>
+      <option value="School">School / Stream Selection</option>
     </select>
-    <button>Find Experts</button>
+    <button onclick="filterMentors()">Search Experts</button>
   </div>
 
   <div class="mentors-wrapper">
@@ -487,7 +503,7 @@
           <h3 id="total-price" style="color: #047857;">₹350</h3>
         </div>
         
-        <button type="submit" class="submit-booking">Confirm & Connect Hero</button>
+        <button type="submit" class="submit-booking">Confirm & Connect Peer</button>
       </form>
     </div>
   </div>
@@ -509,10 +525,11 @@
         name: "Rahul Sharma",
         role: "Student (4th Year) • B.Tech AI",
         institution: "IIT Jammu",
-        expertise: "JEE Adv. Prep & Robotics",
+        expertise: "AI & Robotics",
         rating: "4.9",
         sessions: "120+",
         fees: 150,
+        category: "Engineering",
         avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop"
       },
       {
@@ -520,10 +537,11 @@
         name: "Ipshita Koul",
         role: "Student (3rd Year) • CSE",
         institution: "SMVDU Katra",
-        expertise: "Coding Cultures & Campus Life",
+        expertise: "Coding Cultures",
         rating: "4.8",
         sessions: "95+",
         fees: 120,
+        category: "Coding Cultures",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
       },
       {
@@ -531,10 +549,11 @@
         name: "Sameer Ahmed",
         role: "Student (Final Year) • MBA",
         institution: "The Business School (TBS)",
-        expertise: "CAT Prep & Placements",
+        expertise: "Management",
         rating: "4.7",
         sessions: "80+",
         fees: 200,
+        category: "Management",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
       },
       {
@@ -542,10 +561,11 @@
         name: "Priyanka Verma",
         role: "Intern (Final MBBS)",
         institution: "GMC Jammu",
-        expertise: "NEET UG Tips & Med-School Life",
+        expertise: "Medical",
         rating: "4.9",
         sessions: "150+",
         fees: 250,
+        category: "Medical",
         avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop"
       },
       {
@@ -553,10 +573,11 @@
         name: "Sahil Rathore",
         role: "Student (3rd Year) • B.Tech",
         institution: "MIET Jammu",
-        expertise: "Project Work & Internships",
+        expertise: "Coding Cultures",
         rating: "4.6",
         sessions: "60+",
         fees: 100,
+        category: "Coding Cultures",
         avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop"
       },
       {
@@ -564,10 +585,11 @@
         name: "Mehak Preet",
         role: "Student (2nd Year)",
         institution: "JNV Poonch Alumni",
-        expertise: "JNVST Entrance Guidance",
+        expertise: "School",
         rating: "4.8",
         sessions: "45+",
         fees: 50,
+        category: "School",
         avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&h=200&fit=crop"
       },
       {
@@ -575,10 +597,11 @@
         name: "Arjun Singh",
         role: "Student (3rd Year) • B.Tech",
         institution: "Sanskriti University",
-        expertise: "Web Dev & Core Subjects",
+        expertise: "Coding Cultures",
         rating: "4.7",
         sessions: "110+",
         fees: 180,
+        category: "Coding Cultures",
         avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&h=200&fit=crop"
       },
       {
@@ -586,10 +609,11 @@
         name: "Aakash Jamwal",
         role: "Alumni / 1st Year (Engg)",
         institution: "Jodhamal Public School",
-        expertise: "Stream Selection Advice",
+        expertise: "School",
         rating: "4.9",
         sessions: "30+",
         fees: 80,
+        category: "School",
         avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop"
       },
       {
@@ -597,10 +621,11 @@
         name: "Tania Singh",
         role: "Student (Final Year) • Law",
         institution: "Central Univ of Jammu",
-        expertise: "CLAT & Legal Careers",
+        expertise: "Law",
         rating: "4.8",
         sessions: "70+",
         fees: 150,
+        category: "Law",
         avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop"
       }
     ];
@@ -608,9 +633,13 @@
     const tawkLink = "https://tawk.to/chat/69b4f058406cbe1c37cf1ef8/1jjlclncf";
     let activeMentor = null;
 
-    function renderMentors() {
+    function renderMentors(data = mentorsData) {
       const list = document.getElementById('mentors-list');
-      list.innerHTML = mentorsData.map(m => `
+      if (data.length === 0) {
+        list.innerHTML = '<div class="no-results">No mentors found matching your criteria. Try another search!</div>';
+        return;
+      }
+      list.innerHTML = data.map(m => `
         <div class="mentor-card">
           <div class="mentor-banner"></div>
           <div class="mentor-avatar-container">
@@ -638,6 +667,22 @@
       `).join('');
     }
 
+    function filterMentors() {
+      const searchTerm = document.getElementById('mentor-search').value.toLowerCase();
+      const expertiseTerm = document.getElementById('expertise-filter').value;
+
+      const filtered = mentorsData.filter(m => {
+        const matchesSearch = m.name.toLowerCase().includes(searchTerm) || 
+                              m.institution.toLowerCase().includes(searchTerm) || 
+                              m.role.toLowerCase().includes(searchTerm);
+        const matchesExpertise = !expertiseTerm || m.expertise === expertiseTerm || m.category === expertiseTerm;
+        
+        return matchesSearch && matchesExpertise;
+      });
+
+      renderMentors(filtered);
+    }
+
     function openBooking(id) {
       activeMentor = mentorsData.find(m => m.id === id);
       document.getElementById('modal-mentor-name').textContent = "Connect with " + activeMentor.name;
@@ -657,7 +702,6 @@
 
     function handleBooking(e) {
       e.preventDefault();
-      // Logic for confirmation slip can be added here
       alert("Booking Request Confirmed! You are being connected to " + activeMentor.name + " via Suvidha Live.");
       window.open(tawkLink, '_blank');
       closeBooking();
