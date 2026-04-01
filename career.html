@@ -284,6 +284,41 @@
             .flow-step::before { left: calc(50% + 35px); width: 25px; top: 40px; }
             .flow-step::after { left: calc(50% + 55px); font-size: 16px; top: 35px; }
         }
+
+        /* Degree Workflow Specifics */
+        .workflow-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 50px;
+            border: 1px solid #e2e8f0;
+            transition: 0.4s;
+        }
+
+        .workflow-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .workflow-header {
+            padding: 25px 40px;
+            background: linear-gradient(90deg, #f8fafc, #ffffff);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .workflow-image-container {
+            padding: 40px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .workflow-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
@@ -297,22 +332,21 @@
 
         // Section Toggle Logic
         function toggleSections(sectionToShow) {
-            const class12Section = document.getElementById('section-class12');
-            const class10Section = document.getElementById('section-class10');
-            const btn12 = document.getElementById('btn-class12');
-            const btn10 = document.getElementById('btn-class10');
+            const sections = ['section-class12', 'section-class10', 'section-degree'];
+            const buttons = ['btn-class12', 'btn-class10', 'btn-degree'];
 
-            if (sectionToShow === 'class12') {
-                class12Section.style.display = 'block';
-                class10Section.style.display = 'none';
-                btn12.classList.add('active');
-                btn10.classList.remove('active');
-            } else if (sectionToShow === 'class10') {
-                class12Section.style.display = 'none';
-                class10Section.style.display = 'block';
-                btn12.classList.remove('active');
-                btn10.classList.add('active');
-            }
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = (id === `section-${sectionToShow}`) ? 'block' : 'none';
+            });
+
+            buttons.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id === `btn-${sectionToShow}`) el.classList.add('active');
+                    else el.classList.remove('active');
+                }
+            });
         }
         
         // Ensure Class 12 section is shown by default on page load
@@ -364,6 +398,7 @@
             <div class="controls">
                 <button id="btn-class12" class="active" onclick="toggleSections('class12')">Class 12 Career Paths</button>
                 <button id="btn-class10" onclick="toggleSections('class10')">Class 10 Stream Selection</button>
+                <button id="btn-degree" onclick="toggleSections('degree')">Degree Specialized Workflows</button>
             </div>
         </header>
         
@@ -695,6 +730,41 @@
                     </div>
                 </div>
             </section>
+        </div>
+
+        <!-- NEW SECTION: Degree Specialized Workflows -->
+        <div id="section-degree" style="display: none;">
+            
+            <section class="workflow-card">
+                <div class="workflow-header">
+                    <h2 class="path-title" style="color: var(--path-engineering);">B.Tech Career Workflow</h2>
+                    <p style="color: #64748b; margin-top: 5px;">Comprehensive roadmap for Engineering students post-graduation.</p>
+                </div>
+                <div class="workflow-image-container">
+                    <img src="career workflow/Btech.jpg" class="workflow-img" alt="B.Tech Workflow">
+                </div>
+            </section>
+
+            <section class="workflow-card">
+                <div class="workflow-header">
+                    <h2 class="path-title" style="color: var(--path-medical);">MBBS Career Workflow</h2>
+                    <p style="color: #64748b; margin-top: 5px;">Step-by-step guidance for medical graduates and practitioners.</p>
+                </div>
+                <div class="workflow-image-container">
+                    <img src="career workflow/MBBS.jpg" class="workflow-img" alt="MBBS Workflow">
+                </div>
+            </section>
+
+            <section class="workflow-card">
+                <div class="workflow-header">
+                    <h2 class="path-title" style="color: var(--path-business);">B.Sc Career Workflow</h2>
+                    <p style="color: #64748b; margin-top: 5px;">Diverse career branches for Science graduates across various fields.</p>
+                </div>
+                <div class="workflow-image-container">
+                    <img src="career workflow/Bsc.jpg" class="workflow-img" alt="B.Sc Workflow">
+                </div>
+            </section>
+
         </div>
         
     </div>
