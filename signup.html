@@ -99,8 +99,8 @@
   </div>
 
   <script type="module">
-    import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+    import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
     
     let currentRole = 'student';
     
@@ -117,7 +117,7 @@
     const configs = {
       student: './firebaseConfig/studentConfig.js',
       ngo: './firebaseConfig/ngoConfig.js',
-      parent: './firebaseConfig/govConfig.js' // Mapping to existing gov config for hackathon speed
+      parent: './firebaseConfig/govConfig.js'
     };
 
     document.getElementById("signupBtn").addEventListener("click", async () => {
@@ -134,38 +134,61 @@
       }
 
       try {
-        msgDiv.innerText = "Creating account...";
+        msgDiv.innerText = "Connecting to Firebase...";
         msgDiv.className = "";
         msgDiv.style.display = "block";
 
-        const { firebaseConfig } = await import(configs[currentRole]);
+        // Load config
+        let configData;
+        try {
+          configData = await import(configs[currentRole]);
+        } catch (e) {
+          throw new Error("Configuration file for " + currentRole + " could not be loaded. Check if the file exists in /firebaseConfig/");
+        }
         
+        const { firebaseConfig } = configData;
         const appName = "suvidha_" + currentRole;
         let app = getApps().find(a => a.name === appName);
         if (!app) app = initializeApp(firebaseConfig, appName);
         
         const auth = getAuth(app);
+        msgDiv.innerText = "Creating your account...";
 
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         
-        // Update profile with full name
         await updateProfile(userCredential.user, {
           displayName: name
         });
         
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("userRole", currentRole);
+        localStorage.setItem("userEmail", email);
         
         msgDiv.innerText = "Account created! Redirecting to Dashboard...";
         msgDiv.className = "success";
+        msgDiv.style.display = "block";
         
         setTimeout(() => {
           window.location.href = "dashboard.html";
         }, 1500);
 
       } catch (error) {
-        msgDiv.innerText = "Error: " + error.message;
+        console.error("Full Signup Error Object:", error);
+        
+        let friendlyMsg = error.message;
+        if (error.code === 'auth/email-already-in-use') {
+          friendlyMsg = "This email is already registered. Please Login instead.";
+        } else if (error.code === 'auth/weak-password') {
+          friendlyMsg = "Password is too weak. Please use at least 6 characters.";
+        } else if (error.code === 'auth/operation-not-allowed') {
+          friendlyMsg = "Signups are disabled. Please enable 'Email/Password' in Firebase Console.";
+        } else if (error.code === 'auth/invalid-email') {
+          friendlyMsg = "The email address is not valid.";
+        }
+
+        msgDiv.innerText = "Signup Error: " + friendlyMsg;
         msgDiv.className = "error";
+        msgDiv.style.display = "block";
       }
     });
   </script>

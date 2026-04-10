@@ -95,8 +95,8 @@
   </div>
 
   <script type="module">
-    import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+    import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
     
     // Config management
     let currentRole = 'student';
@@ -114,7 +114,7 @@
     const configs = {
       student: './firebaseConfig/studentConfig.js',
       ngo: './firebaseConfig/ngoConfig.js',
-      parent: './firebaseConfig/govConfig.js' // Mapping parent to existing gov config
+      parent: './firebaseConfig/govConfig.js'
     };
 
     document.getElementById("loginBtn").addEventListener("click", async () => {
@@ -129,11 +129,20 @@
         return;
       }
 
+      msgDiv.innerText = "Authenticating...";
+      msgDiv.className = "";
+      msgDiv.style.display = "block";
+
       try {
-        // Dynamically import the chosen role config
-        const { firebaseConfig } = await import(configs[currentRole]);
-        
-        // Use a role-specific app name that persists across pages
+        // Load config
+        let configData;
+        try {
+          configData = await import(configs[currentRole]);
+        } catch (e) {
+          throw new Error("Configuration file for " + currentRole + " could not be loaded.");
+        }
+
+        const { firebaseConfig } = configData;
         const appName = "suvidha_" + currentRole;
         let app = getApps().find(a => a.name === appName);
         if (!app) app = initializeApp(firebaseConfig, appName);
@@ -149,15 +158,27 @@
         msgDiv.className = "success";
         msgDiv.style.display = "block";
         
-        msgDiv.style.display = "block";
-      
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 1000);
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
 
       } catch (error) {
-        msgDiv.innerText = "Error: " + error.message;
+        console.error("Full Login Error Object:", error);
+        
+        let friendlyMsg = error.message;
+        if (error.code === 'auth/user-not-found') {
+          friendlyMsg = "No account found with this email.";
+        } else if (error.code === 'auth/wrong-password') {
+          friendlyMsg = "Incorrect password. Please try again.";
+        } else if (error.code === 'auth/invalid-credential') {
+          friendlyMsg = "Invalid login credentials. Please check your email and password.";
+        } else if (error.code === 'auth/too-many-requests') {
+          friendlyMsg = "Too many failed attempts. Please try again later.";
+        }
+
+        msgDiv.innerText = "Login Error: " + friendlyMsg;
         msgDiv.className = "error";
+        msgDiv.style.display = "block";
       }
     });
   </script>
