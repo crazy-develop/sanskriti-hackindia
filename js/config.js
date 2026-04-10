@@ -13,7 +13,7 @@ const GOOGLE_CONFIG = {
 };
 
 const GEMINI_CONFIG = {
-    API_KEY: 'AIzaSyAXar03oI8cizbAmVvqxk-gC-N-itNBQJA'
+    API_KEY: 'AIzaSyDnr4Mgix440arZr6qfaCPDYaehI0lPNps'
 };
 
 // Exporting globally for non-module scripts
