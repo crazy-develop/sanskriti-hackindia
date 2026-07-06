@@ -3052,6 +3052,247 @@ s0.parentNode.insertBefore(s1,s0);
       document.body.style.overflow = 'auto';
     }
   </script>
+
+    <!-- WHATIN AI Widget -->
+    <link rel="stylesheet" href="ai-agent-widget.css?v=2">
+    <script src="ai-agent-widget.js?v=2"></script>
+    <div id="ai-agent-widget-container">
+        <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">
+                    <h1>WHATIN Sidekick</h1>
+                    <span class="status-badge" id="api-status">Checking Key...</span>
+                </div>
+            </div>
+            <button id="settings-btn" class="icon-btn" title="Open Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Tab Navigation Control Bar -->
+        <div class="tabs-navigator">
+            <button id="tab-chat" class="tab-btn active">
+                <span>💬 AI Sidekick Chat</span>
+            </button>
+            <button id="tab-inquiry" class="tab-btn">
+                <span>📝 Submit Inquiry</span>
+            </button>
+        </div>
+
+        <!-- API Key Notice Banner -->
+        <div id="missing-key-banner" class="warning-banner hidden">
+            <div class="banner-content">
+                <span class="banner-icon">⚠️</span>
+                <div class="banner-text">
+                    <strong>Gemini API Key Missing</strong>
+                    <p>Configure API Key to start chatting.</p>
+                </div>
+            </div>
+            <button id="configure-now-btn" class="action-link-btn">Configure</button>
+        </div>
+
+        <!-- VIEW 1: AI Chat Assistant -->
+        <div id="view-chat" class="tab-view active">
+            <main class="chat-container">
+                <div id="chat-messages" class="messages-list">
+                    <!-- Welcoming Empty State -->
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-glow"></div>
+                        <div class="empty-content">
+                            <span class="welcome-emoji">🎓</span>
+                            <h2>WHATIN AI Sidekick</h2>
+                            <p>Hum Hack karte hain Nextgen ideas! Apne AKTU sessional tests, syllabus, PYPs, ya question
+                                banks ke baare me poochhein.</p>
+
+                            <div class="quick-guides">
+                                <div class="guide-item" id="guide-capture">
+                                    <span class="guide-icon">📸</span>
+                                    <span class="guide-text">Screen Capture karke poochho</span>
+                                </div>
+                                <div class="guide-item" id="guide-upload">
+                                    <span class="guide-icon">🖼️</span>
+                                    <span class="guide-text">Photo upload karke poochho</span>
+                                </div>
+                                <div class="guide-item" id="guide-readpage">
+                                    <span class="guide-icon">📄</span>
+                                    <span class="guide-text">Is Tab ke text ke baare mai jaanein</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Image Attachment Preview panel -->
+            <div id="attachment-preview-panel" class="attachment-preview-panel hidden">
+                <div class="preview-wrapper">
+                    <img id="attachment-img-preview" src="" alt="Selected visual content">
+                    <button id="remove-attachment-btn" class="close-badge" title="Remove attachment">×</button>
+                </div>
+                <div class="preview-info">
+                    <span id="attachment-name">screenshot.png</span>
+                </div>
+            </div>
+
+            <!-- Input Footer Panel -->
+            <footer class="input-panel">
+                <!-- Context Pills inside footer -->
+                <div id="context-pill" class="context-pill hidden">
+                    <span class="pill-icon">📄</span>
+                    <span class="pill-text" id="context-pill-text">Using Page Context</span>
+                    <button id="remove-context-btn" class="pill-close">×</button>
+                </div>
+
+                <div class="input-wrapper">
+                    <textarea id="chat-input" rows="1" placeholder="WHATIN AI se poochhein..."
+                        autocomplete="off"></textarea>
+
+                    <div class="input-actions">
+                        <div class="left-actions">
+                            <!-- File Input -->
+                            <input type="file" id="file-uploader" accept="image/*" class="hidden">
+                            <button id="upload-btn" class="action-btn" title="Upload Photo (Photo upload)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon-svg">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </button>
+
+                            <!-- Screen Capture -->
+                            <button id="capture-btn" class="action-btn" title="Capture active tab (Screenshot lein)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon-svg">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                    </path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </button>
+
+                            <!-- Read Page Text Context -->
+                            <button id="readpage-btn" class="action-btn" title="Extract tab text (Page read karein)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon-svg">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="right-actions">
+                            <button id="send-btn" class="send-btn" disabled title="Send message">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon-svg">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- VIEW 2: Student Resource & Inquiry Form -->
+        <div id="view-inquiry" class="tab-view hidden">
+            <main class="inquiry-container">
+                <div class="inquiry-header-card">
+                    <h3>Academic Resource Inquiry</h3>
+                    <p>Kya aapko koi specific study notes, PYPs, ya question banks nahi mil rahe? Form fill karein,
+                        WHATIN Team aapko mail aur profile update par resource deliver karegi.</p>
+                </div>
+
+                <form id="student-inquiry-form" class="inquiry-fields-box">
+                    <!-- Name -->
+                    <div class="field-item">
+                        <label for="form-name">Name <span class="req">*</span></label>
+                        <input type="text" id="form-name" placeholder="Apna naam likhein" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="field-item">
+                        <label for="form-email">Email Address <span class="req">*</span></label>
+                        <input type="email" id="form-email" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <!-- Academic Info -->
+                    <div class="field-row">
+                        <div class="field-item">
+                            <label for="form-college">College / University</label>
+                            <input type="text" id="form-college" placeholder="College name (e.g. AKTU affiliate)">
+                        </div>
+                        <div class="field-item">
+                            <label for="form-branch">Branch & Year</label>
+                            <input type="text" id="form-branch" placeholder="e.g. CSE 3rd Year">
+                        </div>
+                    </div>
+
+                    <!-- Category of Inquiry -->
+                    <div class="field-item">
+                        <label for="form-category">Inquiry Type <span class="req">*</span></label>
+                        <select id="form-category" required>
+                            <option value="" disabled selected>Select option...</option>
+                            <option value="Request PYP">Request Previous Year Papers (PYP)</option>
+                            <option value="Request Notes">Request Unit-wise Notes / Study Materials</option>
+                            <option value="Question Banks">Request Important Question Banks</option>
+                            <option value="Report Bug">Report Error/Correction in Existing Notes</option>
+                            <option value="Other">Other Query / Core Feedback</option>
+                        </select>
+                    </div>
+
+                    <!-- Subject details -->
+                    <div class="field-item">
+                        <label for="form-subject">Subject Name & Code</label>
+                        <input type="text" id="form-subject" placeholder="e.g. Compiler Design (BCS-601)">
+                    </div>
+
+                    <!-- Description Message -->
+                    <div class="field-item">
+                        <label for="form-message">Details / Message <span class="req">*</span></label>
+                        <textarea id="form-message" rows="3"
+                            placeholder="Syllabus details ya structural topics specifies karein jo aapko chahiye..."
+                            required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-inquiry-btn" class="form-submit-btn">
+                        <span>Submit Resource Inquiry</span>
+                    </button>
+                </form>
+
+                <!-- Dynamic Success screen widget -->
+                <div id="inquiry-success-widget" class="success-widget hidden">
+                    <div class="success-icon-glow">✓</div>
+                    <h4>Inquiry Registered!</h4>
+                    <p>Aapki inquiry safely `whatin.in` data logs me register ho chuki hai. Hum jald hi aapse contact
+                        karenge.</p>
+                    <button id="success-reset-btn" class="secondary-submit-btn">Nayi Inquiry Submit Karein</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    </div>
+    <button id="ai-agent-fab" onclick="document.getElementById('ai-agent-widget-container').classList.toggle('open')">⚡</button>
+    
 </body>
 
 </html>
